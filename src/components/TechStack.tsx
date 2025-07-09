@@ -73,7 +73,7 @@ const techStack = [
 const TechStack = () => {
   return (
     <div className="w-full flex flex-col items-center py-12">
-      <div className="bg-transparent rounded-2xl border border-gray-300 p-8 w-full max-w-4xl">
+      <div className="bg-transparent rounded-2xl border border-gray-300 px-4 py-8 md:p-8 w-full max-w-4xl">
         <div className="flex flex-col items-center mb-6">
           <Layers className="w-8 h-8 text-orange-500 mb-2" />
           <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-2xl md:text-4xl font-bold text-transparent mb-2 text-center">
@@ -91,7 +91,7 @@ const TechStack = () => {
                 <div className="text-left font-bold text-sm md:text-lg text-gray-900">
                   {item.name}
                 </div>
-                <div className="text-gray-500 text-xs md:text-sm">
+                <div className="text-left text-gray-500 text-xs md:text-sm">
                   {item.description}
                 </div>
               </div>
