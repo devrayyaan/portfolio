@@ -32,7 +32,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-white z-10 fixed bottom-5 left-0 right-0 flex items-center justify-center gap-2 bg-transparent border border-[#e5e7eb] rounded-2xl p-2 w-fit mx-auto shadow-xl">
+    <nav className="w-[90vw] md:w-fit bg-white z-10 fixed bottom-5 left-0 right-0 flex items-center justify-center gap-2 bg-transparent border border-[#e5e7eb] rounded-2xl p-2 mx-auto shadow-xl">
       {navItems.map((item, idx) => {
         const Icon = item.icon;
         const isActive = idx === active;
@@ -41,7 +41,7 @@ export default function Navbar() {
             key={item.label}
             onClick={() => handleClick(idx)}
             className={cn(
-              "cursor-pointer w-11 h-11 flex items-center justify-center rounded-xl border transition-all hover:text-gray-700 hover:border-gray-600",
+              "cursor-pointer w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-xl border transition-all hover:text-gray-700 hover:border-gray-600",
               isActive
                 ? "bg-blue-500 border-blue-500 text-white"
                 : "bg-transparent border-[#e5e7eb] text-[#6b7280] hover:bg-gray-100"

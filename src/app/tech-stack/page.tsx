@@ -126,7 +126,7 @@ export default function TechStackPage() {
         My Tech Stack & Gear
       </h1>
       {/* Subtitle */}
-      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-10 mt-2 leading-relaxed">
+      <p className="text-gray-500 lg:text-lg font-medium max-w-2xl mb-10 mt-2 leading-relaxed">
         I use a lot of Tools everyday. but here are some of My top Favorite
         Tools that I use & Love and I think you should too.
       </p>
@@ -145,10 +145,10 @@ export default function TechStackPage() {
           >
             <div>{item.icon}</div>
             <div>
-              <div className="text-left font-bold text-lg text-gray-900">
+              <div className="text-left font-bold lg:text-lg text-gray-900">
                 {item.name}
               </div>
-              <div className="text-left text-gray-500 text-sm">
+              <div className="text-left text-gray-500 text-xs lg:text-sm">
                 {item.description}
               </div>
             </div>
