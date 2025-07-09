@@ -9,9 +9,9 @@ const navItems = [
   { icon: Store, label: "Store", href: "/store" },
   { icon: Briefcase, label: "Projects", href: "/projects" },
   { icon: User, label: "About", href: "/about" },
-  { icon: Send, label: "Send", href: "/send" },
-  { icon: Layers, label: "Layers", href: "/layers" },
-  { icon: Menu, label: "Menu", href: "/menu" },
+  { icon: Send, label: "Contact", href: "/contact" },
+  { icon: Layers, label: "Tech stack", href: "/tech-stack" },
+  { icon: Menu, label: "Menu", href: "/" },
 ];
 
 export default function Navbar() {

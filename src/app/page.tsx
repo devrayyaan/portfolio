@@ -30,13 +30,16 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Divider className="mt-16 mb-12" />
 
+      <Divider className="mt-16 mb-12" />
       <LatestWork />
+
       <Divider className="mt-2 mb-10" />
       <LatestReleases />
+
       <Divider className="mt-2 mb-4" />
       <HappyCustomers />
+
       <TechStack />
       <FAQ />
       <Contact />

@@ -55,7 +55,7 @@ export default function ProjectsPage() {
         Projects I've Worked On!
       </h1>
       {/* Subtitle */}
-      <p className="text-gray-400 text-lg font-medium max-w-2xl mb-6">
+      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-6">
         In my past experience, I have had the opportunity to work on diverse
         projects and collaborate with renowned brands.
       </p>

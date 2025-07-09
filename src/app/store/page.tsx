@@ -55,7 +55,7 @@ export default function StorePage() {
         Framer & Webflow Templates!
       </h1>
       {/* Subtitle */}
-      <p className="text-gray-400 text-lg font-medium max-w-2xl mb-6">
+      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-6">
         Discover Top-rated & In-demand Layouts for Framer & Webflow. Stay ahead
         of the game with these sought-after layouts.
       </p>

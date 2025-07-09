@@ -55,7 +55,7 @@ const HappyCustomers = () => {
                 <div className="font-bold text-base text-gray-900">
                   {t.name}
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-gray-500">
                   {t.username} • {t.company}
                 </div>
               </div>
