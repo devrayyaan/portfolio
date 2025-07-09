@@ -28,10 +28,9 @@ const Contact = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          overflow: "hidden",
-          backgroundColor: "#fff",
+          backgroundColor: "transparent",
         }}
-        className="w-full h-full max-w-5xl rounded-2xl border border-gray-200 p-12 flex flex-col items-center relative overflow-hidden"
+        className="w-full h-full max-w-5xl rounded-2xl border border-gray-300 p-12 flex flex-col items-center relative overflow-hidden"
       >
         <div className="text-sm font-bold text-gray-800 mb-2 flex items-center gap-1">
           Say hello <span>👋</span>
@@ -46,14 +45,14 @@ const Contact = () => {
         <div className="flex gap-4 mb-2">
           <a
             href="#"
-            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 font-medium text-sm transition"
+            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm"
           >
             <Twitter className="w-4 h-4" />
             Twitter
           </a>
           <a
             href="#"
-            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-200 bg-white font-medium text-sm"
+            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm "
           >
             <Mail className="w-4 h-4" />
             Email Me
@@ -65,7 +64,7 @@ const Contact = () => {
           <input
             type="email"
             placeholder="Subscribe to Newsletter"
-            className="px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
+            className="p-3 text-sm rounded-lg bg-gray-100 text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
           />
           <button className="px-3 py-2 rounded-lg text-sm bg-orange-500 text-white font-semibold hover:bg-orange-600 transition">
             Subscribe

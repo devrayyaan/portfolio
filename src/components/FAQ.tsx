@@ -110,7 +110,7 @@ function FAQItem({
 }) {
   return (
     <button
-      className="flex flex-col bg-white rounded-xl border border-gray-200 px-4 py-3 text-lg font-medium text-gray-700 cursor-pointer w-full"
+      className="flex flex-col bg-transparent rounded-xl border border-gray-300 px-4 py-3 text-lg font-medium text-gray-700 cursor-pointer w-full"
       onClick={() => handleOpen(faq.id)}
       aria-expanded={open === faq.id}
       aria-controls={`faq-panel-${faq.id}`}
@@ -126,7 +126,7 @@ function FAQItem({
         )}
       </div>
       {open.includes(faq.id) && (
-        <div className="text-gray-500 text-left mt-4 text-sm font-light">
+        <div className="text-gray-600 text-left mt-4 text-sm font-light">
           {faq.answer}
         </div>
       )}

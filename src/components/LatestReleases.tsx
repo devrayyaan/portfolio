@@ -42,7 +42,7 @@ const LatestReleases = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-5 flex flex-col h-full border border-gray-200"
+              className="bg-transparent rounded-2xl p-5 flex flex-col h-full border border-gray-300"
             >
               <img
                 src={project.image}

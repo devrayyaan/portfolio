@@ -40,7 +40,7 @@ const LatestWork = () => {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-5 flex flex-col h-full border border-gray-200"
+              className="bg-transparent rounded-2xl p-5 flex flex-col h-full border border-gray-300"
             >
               <img
                 src={project.image}
@@ -49,7 +49,7 @@ const LatestWork = () => {
               />
               <div className="flex gap-2 items-center justify-between mb-4">
                 <h3 className="text-xl font-bold">{project.title}</h3>
-                <span className="border border-gray-200 bg-gray-50 text-gray-700 text-xs font-medium px-3 py-1 rounded-md">
+                <span className="border border-gray-300 bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-md">
                   {project.tags[0].toUpperCase()}
                 </span>
               </div>

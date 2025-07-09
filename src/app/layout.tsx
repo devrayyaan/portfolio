@@ -51,9 +51,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` bg-white w-full pt-[50px] pb-[100px] ${dmSans.className}`}
+        className={` bg-gray-50 w-full pt-[50px] pb-[100px] ${dmSans.className}`}
       >
-        <div className="max-w-4xl mx-auto border border-[#eeeeee] rounded-2xl px-[40px] py-[30px]">
+        <div className="max-w-4xl mx-auto border border-gray-300 rounded-2xl px-[40px] py-[30px]">
           <Header />
           <Navbar />
           {children}

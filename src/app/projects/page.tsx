@@ -68,7 +68,7 @@ export default function ProjectsPage() {
           <input
             type="text"
             placeholder="Search For Products"
-            className="w-full max-w-xs pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-base bg-white placeholder-gray-400"
+            className="bg-white w-full max-w-xs pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-base bg-transparent placeholder-gray-400"
           />
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-5 flex flex-col h-full border border-gray-200"
+              className="bg-transparent rounded-2xl p-5 flex flex-col h-full border border-gray-300"
             >
               <img
                 src={project.image}

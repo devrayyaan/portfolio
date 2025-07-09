@@ -15,17 +15,17 @@ export default function Home() {
         <h1 className="text-3xl font-semibold">
           Hi. I&apos;m Benjamin, a Webflow and Framer Specialist!
         </h1>
-        <p className="text-xl text-[#808080] leading-[2em]">
+        <p className="text-xl text-gray-500 font-medium leading-[2em]">
           Hello, I'm Benjamin, an adept professional in Webflow and Framer.
           Experienced in crafting responsive websites using visual editing
           software like Webflow. Accomplished in creating lively websites with
           Framer.
         </p>
         <div className="flex items-center gap-[20px] mt-2">
-          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-[13px_30px_13px_30px] bg-[#F45D22] text-white font-medium">
+          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-3 px-6 bg-[#F45D22] text-white font-medium">
             <span>Start a project</span> <ArrowRight className="w-4 h-4" />
           </button>
-          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-[13px_30px_13px_30px] bg-[#007BFF] text-white font-medium">
+          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-3 px-6 bg-[#007BFF] text-white font-medium">
             <span>About Me</span> <ArrowRight className="w-4 h-4" />
           </button>
         </div>

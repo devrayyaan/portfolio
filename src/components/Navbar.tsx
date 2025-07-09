@@ -32,7 +32,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="z-10 fixed bottom-5 left-0 right-0 flex items-center justify-center gap-2 bg-white border border-[#e5e7eb] rounded-2xl p-2 w-fit mx-auto shadow-xl">
+    <nav className="bg-white z-10 fixed bottom-5 left-0 right-0 flex items-center justify-center gap-2 bg-transparent border border-[#e5e7eb] rounded-2xl p-2 w-fit mx-auto shadow-xl">
       {navItems.map((item, idx) => {
         const Icon = item.icon;
         const isActive = idx === active;
@@ -44,7 +44,7 @@ export default function Navbar() {
               "cursor-pointer w-11 h-11 flex items-center justify-center rounded-xl border transition-all",
               isActive
                 ? "bg-blue-500 border-blue-500 text-white"
-                : "bg-white border-[#e5e7eb] text-[#6b7280] hover:bg-gray-100"
+                : "bg-transparent border-[#e5e7eb] text-[#6b7280] hover:bg-gray-100"
             )}
             aria-label={item.label}
             type="button"

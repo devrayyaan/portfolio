@@ -4,42 +4,66 @@ import React from "react";
 const techStack = [
   {
     icon: (
-      <img src="https://arc.net/_next/static/media/icon.8c3e2e7e.svg" alt="Arc" className="w-8 h-8" />
+      <img
+        src="https://arc.net/_next/static/media/icon.8c3e2e7e.svg"
+        alt="Arc"
+        className="w-8 h-8"
+      />
     ),
     name: "Arc",
     description: "Best Productivity Browser.",
   },
   {
     icon: (
-      <img src="https://framerusercontent.com/images/Framer-Logo.svg" alt="Framer" className="w-8 h-8" />
+      <img
+        src="https://framerusercontent.com/images/Framer-Logo.svg"
+        alt="Framer"
+        className="w-8 h-8"
+      />
     ),
     name: "Framer",
     description: "Build Next Level Websites.",
   },
   {
     icon: (
-      <img src="https://superhuman.com/images/logo.png" alt="Superhuman" className="w-8 h-8 rounded" />
+      <img
+        src="https://superhuman.com/images/logo.png"
+        alt="Superhuman"
+        className="w-8 h-8 rounded"
+      />
     ),
     name: "Superhuman",
     description: "Simple & Powerful Email.",
   },
   {
     icon: (
-      <img src="https://avatars.githubusercontent.com/u/6342852?s=200&v=4" alt="LemonSqueezy" className="w-8 h-8 rounded" />
+      <img
+        src="https://avatars.githubusercontent.com/u/6342852?s=200&v=4"
+        alt="LemonSqueezy"
+        className="w-8 h-8 rounded"
+      />
     ),
     name: "LemonSqueezy",
     description: "Easy Checkout Solution",
   },
   {
     icon: (
-      <img src="https://cdn.cultofmac.com/wp-content/uploads/2017/05/things-3-icon.png" alt="Things 3" className="w-8 h-8 rounded" />
+      <img
+        src="https://cdn.cultofmac.com/wp-content/uploads/2017/05/things-3-icon.png"
+        alt="Things 3"
+        className="w-8 h-8 rounded"
+      />
     ),
     name: "Things 3",
     description: "Manage Daily Tasks.",
   },
   {
     icon: (
-      <img src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png" alt="Figma" className="w-8 h-8 rounded" />
+      <img
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
+        alt="Figma"
+        className="w-8 h-8 rounded"
+      />
     ),
     name: "Figma",
     description: "Best Design Tool.",
@@ -49,7 +73,7 @@ const techStack = [
 const TechStack = () => {
   return (
     <div className="w-full flex flex-col items-center py-12">
-      <div className="bg-white rounded-2xl border border-gray-200 p-8 w-full max-w-4xl">
+      <div className="bg-transparent rounded-2xl border border-gray-300 p-8 w-full max-w-4xl">
         <div className="flex flex-col items-center mb-6">
           <Layers className="w-8 h-8 text-orange-500 mb-2" />
           <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-4xl font-bold text-transparent mb-2 text-center">
@@ -60,11 +84,13 @@ const TechStack = () => {
           {techStack.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-center bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-100"
+              className="flex items-center bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
             >
               <div>{item.icon}</div>
               <div>
-                <div className="font-bold text-lg text-gray-900">{item.name}</div>
+                <div className="font-bold text-lg text-gray-900">
+                  {item.name}
+                </div>
                 <div className="text-gray-500 text-sm">{item.description}</div>
               </div>
             </div>

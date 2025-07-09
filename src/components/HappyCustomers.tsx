@@ -43,7 +43,7 @@ const HappyCustomers = () => {
         {testimonials.map((t, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col"
+            className="bg-transparent rounded-xl border border-gray-300 p-6 flex flex-col"
           >
             <div className="flex items-center mb-3">
               <img
@@ -52,7 +52,9 @@ const HappyCustomers = () => {
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div>
-                <div className="font-bold text-base text-gray-900">{t.name}</div>
+                <div className="font-bold text-base text-gray-900">
+                  {t.name}
+                </div>
                 <div className="text-sm text-gray-400">
                   {t.username} • {t.company}
                 </div>
