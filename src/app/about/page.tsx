@@ -14,13 +14,13 @@ export default function AboutPage() {
         <img
           src="/about-img.avif"
           alt="About Me"
-          className="relative w-full h-[400px] object-cover rounded-2xl mt-8 border border-gray-200"
+          className="relative w-full h-[150px] md:h-[400px] object-cover rounded-2xl mt-8 border border-gray-200"
         />
-        <div className="rounded-full w-24 h-24 bg-gray-300 border-4 border-white absolute top-95 right-0 left-0 mx-auto"></div>
-        <p className="mt-16 text-lg font-medium">Benjamin Stewart</p>
+        <div className="rounded-full w-16 h-16 md:w-24 md:h-24 bg-gray-300 border-4 border-white absolute top-37 md:top-95 right-0 left-0 mx-auto"></div>
+        <p className="mt-9 md:mt-16 text-lg font-medium">Benjamin Stewart</p>
       </div>
 
-      <p className="text-left text-gray-500 text-lg font-medium mb-6 leading-relaxed w-full mt-10">
+      <p className="text-left text-gray-500  md:text-lg font-medium mb-6 leading-relaxed w-full mt-10">
         Hey, I'm <span className="text-black">Benjamin Stewart</span>, a Webflow
         and Framer designer. I specialize in crafting visually stunning websites
         and interactive prototypes. With Webflow, I bring designs to life,
@@ -28,7 +28,7 @@ export default function AboutPage() {
         other hand, unleashes my creativity, allowing me to create captivating
         interactive prototypes that push UI boundaries.
       </p>
-      <p className="text-left text-gray-500 text-lg font-medium mb-6 leading-relaxed w-full">
+      <p className="text-left text-gray-500 md:text-lg font-medium mb-6 leading-relaxed w-full">
         I'm all about blending aesthetics and functionality to deliver
         exceptional designs. From creating user-friendly interfaces to exploring
         cutting-edge interactions, I'm passionate about innovation. Let's

@@ -6,7 +6,7 @@ const techStack = [
     icon: (
       <img
         src="https://arc.net/_next/static/media/icon.8c3e2e7e.svg"
-        alt="Arc"
+        alt=""
         className="w-8 h-8"
       />
     ),
@@ -17,7 +17,7 @@ const techStack = [
     icon: (
       <img
         src="https://framerusercontent.com/images/Framer-Logo.svg"
-        alt="Framer"
+        alt=""
         className="w-8 h-8"
       />
     ),
@@ -28,7 +28,7 @@ const techStack = [
     icon: (
       <img
         src="https://superhuman.com/images/logo.png"
-        alt="Superhuman"
+        alt=""
         className="w-8 h-8 rounded"
       />
     ),
@@ -39,7 +39,7 @@ const techStack = [
     icon: (
       <img
         src="https://avatars.githubusercontent.com/u/6342852?s=200&v=4"
-        alt="LemonSqueezy"
+        alt=""
         className="w-8 h-8 rounded"
       />
     ),
@@ -50,7 +50,7 @@ const techStack = [
     icon: (
       <img
         src="https://cdn.cultofmac.com/wp-content/uploads/2017/05/things-3-icon.png"
-        alt="Things 3"
+        alt=""
         className="w-8 h-8 rounded"
       />
     ),
@@ -76,7 +76,7 @@ const TechStack = () => {
       <div className="bg-transparent rounded-2xl border border-gray-300 p-8 w-full max-w-4xl">
         <div className="flex flex-col items-center mb-6">
           <Layers className="w-8 h-8 text-orange-500 mb-2" />
-          <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-4xl font-bold text-transparent mb-2 text-center">
+          <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-2xl md:text-4xl font-bold text-transparent mb-2 text-center">
             My Tech Stack
           </h2>
         </div>
@@ -88,10 +88,12 @@ const TechStack = () => {
             >
               <div>{item.icon}</div>
               <div>
-                <div className="font-bold text-lg text-gray-900">
+                <div className="text-left font-bold text-sm md:text-lg text-gray-900">
                   {item.name}
                 </div>
-                <div className="text-gray-500 text-sm">{item.description}</div>
+                <div className="text-gray-500 text-xs md:text-sm">
+                  {item.description}
+                </div>
               </div>
             </div>
           ))}

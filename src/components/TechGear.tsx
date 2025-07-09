@@ -49,7 +49,7 @@ export default function TechGear() {
         <Settings className="w-10 h-10 text-orange-500" />
       </div>
       {/* Heading */}
-      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-transparent text-3xl md:text-4xl font-bold mb-2">
+      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-3xl md:text-4xl font-bold text-transparent mb-2 text-center">
         My Tech Gear
       </h2>
       {/* Grid */}
