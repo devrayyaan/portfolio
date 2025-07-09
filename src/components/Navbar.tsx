@@ -8,7 +8,7 @@ const navItems = [
   { icon: Home, label: "Home", href: "/" },
   { icon: Store, label: "Store", href: "/store" },
   { icon: Briefcase, label: "Projects", href: "/projects" },
-  { icon: User, label: "Profile", href: "/profile" },
+  { icon: User, label: "About", href: "/about" },
   { icon: Send, label: "Send", href: "/send" },
   { icon: Layers, label: "Layers", href: "/layers" },
   { icon: Menu, label: "Menu", href: "/menu" },
@@ -41,7 +41,7 @@ export default function Navbar() {
             key={item.label}
             onClick={() => handleClick(idx)}
             className={cn(
-              "cursor-pointer w-11 h-11 flex items-center justify-center rounded-xl border transition-all",
+              "cursor-pointer w-11 h-11 flex items-center justify-center rounded-xl border transition-all hover:text-gray-700 hover:border-gray-600",
               isActive
                 ? "bg-blue-500 border-blue-500 text-white"
                 : "bg-transparent border-[#e5e7eb] text-[#6b7280] hover:bg-gray-100"
@@ -50,10 +50,7 @@ export default function Navbar() {
             type="button"
           >
             <Icon
-              className={cn(
-                "w-5 h-5",
-                isActive ? "text-white" : "text-[#6b7280]"
-              )}
+              className={cn("w-5 h-5", isActive ? "text-white" : "inherit")}
             />
           </button>
         );
