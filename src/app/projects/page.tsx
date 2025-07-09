@@ -1,4 +1,4 @@
-import { ArrowRight, Briefcase, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Briefcase, Search } from "lucide-react";
 import React from "react";
 import Contact from "@/components/Contact";
 import Title from "@/components/ui/Title";
@@ -13,7 +13,6 @@ const projects = [
     description:
       "Crafting Innovative, Responsive Designs that Drive Growth & Captivate Audience.",
     button: "Learn More",
-    price: "$89",
   },
   {
     image:
@@ -22,26 +21,6 @@ const projects = [
     tags: ["UX/UI Design"],
     description: "A stunning Membership website made with Framer & Outseta.",
     button: "Learn More",
-    price: "$199",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
-    title: "Agency Website",
-    tags: ["Website Design"],
-    description:
-      "Crafting Innovative, Responsive Designs that Drive Growth & Captivate Audience.",
-    button: "Learn More",
-    price: "$89",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-    title: "Membership Website",
-    tags: ["UX/UI Design"],
-    description: "A stunning Membership website made with Framer & Outseta.",
-    button: "Learn More",
-    price: "$199",
   },
 ];
 
@@ -57,8 +36,8 @@ export default function ProjectsPage() {
       {/* Search Input */}
       <div className="w-full max-w-sm">
         <div className="relative">
-          <span className="absolute left-12 top-1/2 -translate-y-1/2 text-gray-400">
-            <Search className="w-4 h-4 text-black" />
+          <span className="relative">
+            <Search className="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 w-4 h-4 text-black" />
           </span>
           <input
             type="text"
@@ -69,7 +48,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* List of Items */}
-      <div className="w-full flex flex-col items-center py-8 mt-8">
+      <div className="w-full flex flex-col items-center py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
           {projects.map((project, idx) => (
             <div
@@ -79,18 +58,30 @@ export default function ProjectsPage() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-xl mb-6"
+                className="w-full h-62 object-cover rounded-xl mb-6"
               />
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold">{project.title}</h3>
-                <span className="bg-gray-100 font-bold text-black border border-gray-300 text-sm px-2 py-1 rounded-md">
-                  {project.price}
+              <div className="flex gap-2 items-center justify-between mb-4 w-full">
+                <h3 className="text-left text-[15px] lg:text-xl font-bold">
+                  {project.title}
+                </h3>
+                <span className="border border-gray-300 bg-gray-100 text-gray-700 text-[10px] lg:text-xs font-medium px-2 py-1 md:px-3 md:py-1 rounded-md">
+                  {project.tags[0].toUpperCase()}
                 </span>
               </div>
-              <p className="text-gray-500 mb-8 flex-1">{project.description}</p>
-              <button className="mt-auto flex items-center justify-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-md">
-                <span>View Template</span> <ArrowRight className="w-4 h-4" />
-              </button>
+              <p className="text-sm lg:text-base text-gray-500 mb-8 flex-1 text-left">
+                {project.description}
+              </p>
+              <div className="flex items-center justify-between">
+                <button className="border border-gray-300 flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-medium transition">
+                  <span className="text-xs lg:text-sm text-gray-800">
+                    Learn More
+                  </span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <button className="border border-gray-200 flex items-center gap-2 p-1 bg-transparent hover:bg-gray-200 text-gray-800 rounded-lg font-medium">
+                  <ArrowUpRight className="w-5 h-5 text-gray-400" />
+                </button>
+              </div>
             </div>
           ))}
         </div>
