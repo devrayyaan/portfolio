@@ -4,6 +4,8 @@ import React from "react";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
+import Title from "@/components/ui/Title";
+import Subtitle from "@/components/ui/Subtitle";
 
 export default function ContactPage() {
   return (
@@ -13,14 +15,8 @@ export default function ContactPage() {
         <Send className="w-10 h-10 text-orange-500" />
       </div>
       {/* Heading */}
-      <h1 className="text-2xl md:text-3xl font-bold mb-2">
-        Let's Get in Touch!
-      </h1>
-      {/* Subtitle */}
-      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-10 mt-2 leading-relaxed">
-        Wanna Work Together? I'm just a button click away, I'll be happy to help
-        you with your Framer/Webflow Stuff!
-      </p>
+      <Title text="Let's Get in Touch!" />
+      <Subtitle text="Wanna Work Together? I'm just a button click away, I'll be happy to help you with your Framer/Webflow Stuff!" />
 
       {/* Contact form */}
       <ContactForm />

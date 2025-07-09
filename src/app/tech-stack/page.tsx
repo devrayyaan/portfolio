@@ -4,6 +4,8 @@ import React from "react";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Divider from "@/components/Divider";
+import Title from "@/components/ui/Title";
+import Subtitle from "@/components/ui/Subtitle";
 
 const techStack = [
   {
@@ -121,16 +123,8 @@ export default function TechStackPage() {
       <div className="mb-4">
         <Layers className="w-10 h-10 text-orange-500" />
       </div>
-      {/* Heading */}
-      <h1 className="text-2xl md:text-3xl font-bold mb-2">
-        My Tech Stack & Gear
-      </h1>
-      {/* Subtitle */}
-      <p className="text-gray-500 lg:text-lg font-medium max-w-2xl mb-10 mt-2 leading-relaxed">
-        I use a lot of Tools everyday. but here are some of My top Favorite
-        Tools that I use & Love and I think you should too.
-      </p>
-
+      <Title text="My Tech Stack & Gear" />
+      <Subtitle text="I use a lot of Tools everyday. but here are some of My top Favorite Tools that I use & Love and I think you should too." />
       <Divider className="mb-10 mt-14" />
 
       {/* Tech stack */}

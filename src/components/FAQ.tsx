@@ -68,9 +68,10 @@ const FAQ = () => {
   return (
     <div className="w-full flex flex-col items-center py-12">
       <CircleQuestionMark className="w-8 h-8 text-orange-500 mb-2" />
-      <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
+      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-2xl md:text-4xl font-bold text-transparent text-center mb-12">
         Frequently Asked Questions
       </h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
         {/* Left column */}
         <div className="flex flex-col gap-4">

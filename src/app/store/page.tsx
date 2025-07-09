@@ -1,6 +1,8 @@
 import { ArrowRight, Search, Store } from "lucide-react";
 import React from "react";
 import Contact from "@/components/Contact";
+import Title from "@/components/ui/Title";
+import Subtitle from "@/components/ui/Subtitle";
 
 const projects = [
   {
@@ -50,15 +52,9 @@ export default function StorePage() {
       <div className="mb-4">
         <Store className="w-10 h-10 text-orange-500" />
       </div>
-      {/* Heading */}
-      <h1 className="text-2xl md:text-3xl font-bold mb-2">
-        Framer & Webflow Templates!
-      </h1>
-      {/* Subtitle */}
-      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-6">
-        Discover Top-rated & In-demand Layouts for Framer & Webflow. Stay ahead
-        of the game with these sought-after layouts.
-      </p>
+      <Title text="Framer & Webflow Templates!" />
+      <Subtitle text="Discover Top-rated & In-demand Layouts for Framer & Webflow. Stay ahead of the game with these sought-after layouts." />
+
       {/* Search Input */}
       <div className="w-full max-w-sm">
         <div className="relative">

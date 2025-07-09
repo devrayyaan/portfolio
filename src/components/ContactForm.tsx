@@ -5,9 +5,9 @@ const ContactForm = () => {
   const [type, setType] = useState("General");
 
   return (
-    <div className="bg-transparent rounded-2xl p-6 md:p-10 w-full mx-auto border border-gray-200">
+    <div className="bg-transparent rounded-2xl p-4 md:p-6 md:p-10 w-full mx-auto border border-gray-200">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-start md:flex-row md:items-center gap-4">
           <h2 className="text-lg md:text-xl font-bold mr-2">Write it here!</h2>
           <div className="flex gap-2 bg-gray-100 rounded-lg p-1">
             <button
@@ -34,7 +34,7 @@ const ContactForm = () => {
             </button>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-black text-sm">
+        <div className="hidden lg:flex items-center gap-2 text-black text-sm">
           <Clock className="w-4 h-4" />
           <span>Average Response Time: 24 Hours or Less</span>
         </div>
@@ -44,18 +44,18 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Name"
-            className="flex-1 bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-base"
+            className="flex-1 bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-sm md:text-base"
           />
           <input
             type="email"
             placeholder="Email"
-            className="flex-1 bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-base"
+            className="flex-1 bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-sm md:text-base"
           />
         </div>
         <textarea
           placeholder="Message"
           rows={6}
-          className="w-full bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-base resize-none"
+          className="w-full bg-gray-100 rounded-lg px-4 py-3 outline-none placeholder-gray-400 text-sm md:text-base resize-none"
         />
         <div>
           <button

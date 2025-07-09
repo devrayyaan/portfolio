@@ -1,6 +1,8 @@
 import { ArrowRight, Briefcase, Search } from "lucide-react";
 import React from "react";
 import Contact from "@/components/Contact";
+import Title from "@/components/ui/Title";
+import Subtitle from "@/components/ui/Subtitle";
 
 const projects = [
   {
@@ -50,15 +52,8 @@ export default function ProjectsPage() {
       <div className="mb-4">
         <Briefcase className="w-10 h-10 text-orange-500" />
       </div>
-      {/* Heading */}
-      <h1 className="text-2xl md:text-3xl font-bold mb-2">
-        Projects I've Worked On!
-      </h1>
-      {/* Subtitle */}
-      <p className="text-gray-500 text-lg font-medium max-w-2xl mb-6">
-        In my past experience, I have had the opportunity to work on diverse
-        projects and collaborate with renowned brands.
-      </p>
+      <Title text="Projects I've Worked On!" />
+      <Subtitle text="In my past experience, I have had the opportunity to work on diverse projects and collaborate with renowned brands." />
       {/* Search Input */}
       <div className="w-full max-w-sm">
         <div className="relative">
