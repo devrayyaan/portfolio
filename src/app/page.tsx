@@ -1,5 +1,11 @@
 import Divider from "@/components/Divider";
+import LatestWork from "@/components/LatestWork";
+import LatestReleases from "@/components/LatestReleases";
+import FAQ from "@/components/FAQ";
+import Contact from "@/components/Contact";
 import { ArrowRight, Briefcase } from "lucide-react";
+import HappyCustomers from "@/components/HappyCustomers";
+import TechStack from "@/components/TechStack";
 
 export default function Home() {
   return (
@@ -24,18 +30,16 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <Divider className="mt-16 mb-10" />
-      <div className="">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Briefcase className="w-6 h-6 text-[#F45D22]" />
-            <h3 className="text-xl font-medium">Latest Work</h3>
-          </div>
-          <button className=" flex items-center justify-center gap-2  cursor-pointer text-black">
-            <span>View All</span> <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
+      <Divider className="mt-16 mb-12" />
+
+      <LatestWork />
+      <Divider className="mt-2 mb-10" />
+      <LatestReleases />
+      <Divider className="mt-2 mb-4" />
+      <HappyCustomers />
+      <TechStack />
+      <FAQ />
+      <Contact />
     </div>
   );
 }
