@@ -1,0 +1,296 @@
+{
+  "website_design": {
+    "layout": "single_page_portfolio",
+    "container": {
+      "max_width": "1200px",
+      "margin": "0 auto",
+      "padding": "40px 20px",
+      "background_color": "#f8f9fa"
+    },
+    "sections": [
+      {
+        "type": "hero_section",
+        "background": "#ffffff",
+        "border_radius": "24px",
+        "box_shadow": "0 4px 24px rgba(0, 0, 0, 0.08)",
+        "padding": "40px",
+        "margin_bottom": "60px",
+        "elements": [
+          {
+            "type": "profile_header",
+            "layout": "flex",
+            "justify_content": "space-between",
+            "align_items": "center",
+            "margin_bottom": "60px",
+            "left_section": {
+              "type": "profile_info",
+              "layout": "flex",
+              "align_items": "center",
+              "gap": "16px",
+              "profile_image": {
+                "src": "profile_placeholder",
+                "width": "60px",
+                "height": "60px",
+                "border_radius": "50%",
+                "object_fit": "cover"
+              },
+              "profile_details": {
+                "name": {
+                  "text": "Benjamin Stewart",
+                  "font_size": "24px",
+                  "font_weight": "600",
+                  "color": "#1a1a1a",
+                  "margin_bottom": "4px"
+                },
+                "title": {
+                  "text": "Tea Lover ☕",
+                  "font_size": "16px",
+                  "color": "#6b7280",
+                  "font_weight": "400"
+                }
+              }
+            },
+            "right_section": {
+              "type": "status_indicator",
+              "layout": "flex",
+              "align_items": "center",
+              "gap": "8px",
+              "status_dot": {
+                "width": "8px",
+                "height": "8px",
+                "background_color": "#22c55e",
+                "border_radius": "50%"
+              },
+              "status_text": {
+                "text": "Available for Amazing Projects",
+                "font_size": "14px",
+                "color": "#374151",
+                "font_weight": "500"
+              }
+            }
+          },
+          {
+            "type": "main_content",
+            "elements": [
+              {
+                "type": "greeting_emoji",
+                "text": "👋",
+                "font_size": "48px",
+                "margin_bottom": "24px"
+              },
+              {
+                "type": "main_heading",
+                "text": "Hi. I'm Benjamin, a Webflow and Framer Specialist!",
+                "font_size": "48px",
+                "font_weight": "700",
+                "color": "#1a1a1a",
+                "line_height": "1.2",
+                "margin_bottom": "32px"
+              },
+              {
+                "type": "description",
+                "paragraphs": [
+                  {
+                    "text": "Hello, I'm Benjamin, an adept professional in Webflow and Framer. Experienced in crafting responsive websites using visual editing software like Webflow.",
+                    "font_size": "18px",
+                    "color": "#6b7280",
+                    "line_height": "1.6",
+                    "margin_bottom": "16px"
+                  },
+                  {
+                    "text": "Accomplished in creating lively websites with Framer.",
+                    "font_size": "18px",
+                    "color": "#6b7280",
+                    "line_height": "1.6",
+                    "margin_bottom": "40px"
+                  }
+                ]
+              },
+              {
+                "type": "cta_buttons",
+                "layout": "flex",
+                "gap": "16px",
+                "buttons": [
+                  {
+                    "type": "primary_button",
+                    "text": "Start a Project",
+                    "background_color": "#ea5a3d",
+                    "color": "#ffffff",
+                    "padding": "16px 28px",
+                    "border_radius": "12px",
+                    "font_size": "16px",
+                    "font_weight": "600",
+                    "border": "none",
+                    "cursor": "pointer",
+                    "has_arrow": true,
+                    "hover_effect": "darken"
+                  },
+                  {
+                    "type": "secondary_button",
+                    "text": "About Me",
+                    "background_color": "#3b82f6",
+                    "color": "#ffffff",
+                    "padding": "16px 28px",
+                    "border_radius": "12px",
+                    "font_size": "16px",
+                    "font_weight": "600",
+                    "border": "none",
+                    "cursor": "pointer",
+                    "has_arrow": true,
+                    "hover_effect": "darken"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "latest_work_section",
+        "background": "#ffffff",
+        "border_radius": "24px",
+        "box_shadow": "0 4px 24px rgba(0, 0, 0, 0.08)",
+        "padding": "40px",
+        "elements": [
+          {
+            "type": "section_header",
+            "layout": "flex",
+            "justify_content": "space-between",
+            "align_items": "center",
+            "margin_bottom": "40px",
+            "left_content": {
+              "layout": "flex",
+              "align_items": "center",
+              "gap": "12px",
+              "icon": {
+                "type": "briefcase_icon",
+                "color": "#ea5a3d",
+                "size": "24px"
+              },
+              "title": {
+                "text": "Latest Work",
+                "font_size": "32px",
+                "font_weight": "700",
+                "color": "#1a1a1a"
+              }
+            },
+            "right_content": {
+              "type": "view_all_link",
+              "text": "View All",
+              "font_size": "16px",
+              "color": "#6b7280",
+              "font_weight": "500",
+              "has_arrow": true,
+              "hover_effect": "color_change"
+            }
+          },
+          {
+            "type": "work_gallery",
+            "layout": "grid",
+            "grid_template_columns": "1fr 1fr",
+            "gap": "24px",
+            "items": [
+              {
+                "type": "work_item",
+                "background_image": "workspace_photo_1",
+                "background_size": "cover",
+                "background_position": "center",
+                "height": "300px",
+                "border_radius": "16px",
+                "position": "relative",
+                "overlay": {
+                  "background": "linear-gradient(transparent, rgba(0,0,0,0.3))",
+                  "position": "absolute",
+                  "top": "0",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "description": "Workspace with laptops, coffee, and design tools on desk"
+              },
+              {
+                "type": "work_item",
+                "background_image": "workspace_photo_2",
+                "background_size": "cover",
+                "background_position": "center",
+                "height": "300px",
+                "border_radius": "16px",
+                "position": "relative",
+                "overlay": {
+                  "background": "linear-gradient(transparent, rgba(0,0,0,0.3))",
+                  "position": "absolute",
+                  "top": "0",
+                  "left": "0",
+                  "right": "0",
+                  "bottom": "0"
+                },
+                "description": "Person working on laptop showing web design interface"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "type": "branding_footer",
+      "position": "fixed",
+      "bottom": "20px",
+      "right": "20px",
+      "background": "#1a1a1a",
+      "color": "#ffffff",
+      "padding": "12px 16px",
+      "border_radius": "8px",
+      "font_size": "14px",
+      "font_weight": "500",
+      "elements": [
+        {
+          "type": "framer_logo",
+          "width": "16px",
+          "height": "16px",
+          "margin_right": "8px"
+        },
+        {
+          "type": "text",
+          "content": "Made in Framer"
+        }
+      ]
+    },
+    "responsive_breakpoints": {
+      "mobile": {
+        "max_width": "768px",
+        "adjustments": {
+          "container_padding": "20px 16px",
+          "main_heading_font_size": "32px",
+          "description_font_size": "16px",
+          "cta_buttons_layout": "flex-column",
+          "work_gallery_grid": "1fr",
+          "section_header_layout": "flex-column",
+          "section_header_align": "flex-start",
+          "section_header_gap": "16px"
+        }
+      },
+      "tablet": {
+        "max_width": "1024px",
+        "adjustments": {
+          "main_heading_font_size": "40px",
+          "container_padding": "30px 20px"
+        }
+      }
+    },
+    "typography": {
+      "font_family": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "base_font_size": "16px",
+      "line_height": "1.5"
+    },
+    "color_scheme": {
+      "primary": "#ea5a3d",
+      "secondary": "#3b82f6",
+      "text_primary": "#1a1a1a",
+      "text_secondary": "#6b7280",
+      "background_primary": "#ffffff",
+      "background_secondary": "#f8f9fa",
+      "success": "#22c55e",
+      "shadow": "rgba(0, 0, 0, 0.08)"
+    }
+  }
+}
