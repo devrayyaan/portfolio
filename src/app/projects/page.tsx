@@ -1,4 +1,4 @@
-import { ArrowRight, Search, Store } from "lucide-react";
+import { ArrowRight, Briefcase, Search } from "lucide-react";
 import React from "react";
 import Contact from "@/components/Contact";
 
@@ -43,21 +43,21 @@ const projects = [
   },
 ];
 
-export default function StorePage() {
+export default function ProjectsPage() {
   return (
     <div className="mt-14 flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
       {/* Shop Icon */}
       <div className="mb-4">
-        <Store className="w-10 h-10 text-orange-500" />
+        <Briefcase className="w-10 h-10 text-orange-500" />
       </div>
       {/* Heading */}
       <h1 className="text-2xl md:text-3xl font-bold mb-2">
-        Framer & Webflow Templates!
+        Projects I've Worked On!
       </h1>
       {/* Subtitle */}
       <p className="text-gray-400 text-lg font-medium max-w-2xl mb-6">
-        Discover Top-rated & In-demand Layouts for Framer & Webflow. Stay ahead
-        of the game with these sought-after layouts.
+        In my past experience, I have had the opportunity to work on diverse
+        projects and collaborate with renowned brands.
       </p>
       {/* Search Input */}
       <div className="w-full max-w-sm">
