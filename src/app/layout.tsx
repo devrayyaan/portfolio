@@ -1,34 +1,42 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { DM_Sans } from "next/font/google";
 
 import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
-const generalSans = localFont({
-  src: [
-    {
-      path: "./fonts/GeneralSans-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/GeneralSans-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/GeneralSans-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "./fonts/GeneralSans-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-  variable: "--font-general-sans",
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-dm-sans",
 });
+
+// const generalSans = localFont({
+//   src: [
+//     {
+//       path: "./fonts/GeneralSans-Medium.woff2",
+//       weight: "500",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/GeneralSans-Regular.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/GeneralSans-SemiBold.woff2",
+//       weight: "600",
+//       style: "normal",
+//     },
+//     {
+//       path: "./fonts/GeneralSans-Bold.woff2",
+//       weight: "700",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-general-sans",
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,10 +51,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${generalSans.className}  bg-white w-full pt-[50px] pb-[100px]`}
+        className={` bg-white w-full pt-[50px] pb-[100px] ${dmSans.className}`}
       >
         <div className="max-w-4xl mx-auto border border-[#eeeeee] rounded-2xl px-[40px] py-[30px]">
           <Header />
+          <Navbar />
           {children}
         </div>
       </body>

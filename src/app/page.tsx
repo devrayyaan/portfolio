@@ -1,6 +1,5 @@
 import Divider from "@/components/Divider";
-import { ArrowRight, Briefcase, Divide } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Briefcase } from "lucide-react";
 
 export default function Home() {
   return (
