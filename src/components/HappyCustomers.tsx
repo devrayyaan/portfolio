@@ -36,7 +36,7 @@ const HappyCustomers = () => {
   return (
     <div className="w-full flex flex-col items-center py-8">
       <Quote className="w-8 h-8 text-orange-500 mb-2" />
-      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-4xl font-bold text-transparent mb-12 mt-4 text-center">
+      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-2xl lg:text-4xl font-bold text-transparent mb-12 mt-4 text-center">
         Happy Customers!
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
