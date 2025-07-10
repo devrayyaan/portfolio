@@ -19,7 +19,7 @@ export default function StorePage() {
       <div className="w-full max-w-sm">
         <div className="relative">
           <span className="relative">
-            <Search className="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 w-4 h-4 text-black" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black" />
           </span>
           <input
             type="text"
