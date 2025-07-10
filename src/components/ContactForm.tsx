@@ -1,11 +1,24 @@
+"use client";
 import { Clock } from "lucide-react";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const ContactForm = () => {
   const [type, setType] = useState("General");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="bg-transparent rounded-2xl p-4 md:p-6 md:p-10 w-full mx-auto border border-gray-200">
+    <motion.div
+      ref={ref}
+      className="bg-transparent rounded-2xl p-4 md:p-6 md:p-10 w-full mx-auto border border-gray-200"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+    >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
         <div className="flex flex-col items-start md:flex-row md:items-center gap-4">
           <h2 className="text-lg md:text-xl font-bold mr-2">Write it here!</h2>
@@ -70,7 +83,7 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

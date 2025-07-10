@@ -1,3 +1,4 @@
+"use client";
 import Divider from "@/components/Divider";
 import LatestWork from "@/components/LatestWork";
 import LatestReleases from "@/components/LatestReleases";
@@ -6,12 +7,27 @@ import Contact from "@/components/Contact";
 import { ArrowRight, Briefcase } from "lucide-react";
 import HappyCustomers from "@/components/HappyCustomers";
 import TechStack from "@/components/TechStack";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div className="p-3 lg:p-0 min-h-[100vh]">
       <div className="pt-[57px] flex flex-col gap-[12px]">
-        <h1 className="text-[34px] font-medium">👋</h1>
+        <motion.h1
+          className="w-[50px] text-4xl font-medium"
+          animate={{
+            rotate: [0, 14, -8, 14, 0],
+          }}
+          transition={{
+            duration: 1,
+            repeat: Infinity,
+            ease: "easeInOut",
+            times: [0, 0.2, 0.5, 0.8, 1],
+            repeatDelay: 2,
+          }}
+        >
+          👋
+        </motion.h1>
         <h1 className="text-xl md:text-3xl font-semibold">
           Hi. I&apos;m Benjamin, a Webflow and Framer Specialist!
         </h1>
@@ -22,12 +38,22 @@ export default function Home() {
           Framer.
         </p>
         <div className="flex flex-col lg:flex-row items-start gap-2 lg:items-center lg:gap-[20px] mt-2">
-          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#F45D22] text-white font-medium">
+          <motion.button
+            className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#F45D22] text-white font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <span>Start a project</span> <ArrowRight className="w-4 h-4" />
-          </button>
-          <button className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#007BFF] text-white font-medium">
+          </motion.button>
+          <motion.button
+            className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#007BFF] text-white font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
             <span>About Me</span> <ArrowRight className="w-4 h-4" />
-          </button>
+          </motion.button>
         </div>
       </div>
 

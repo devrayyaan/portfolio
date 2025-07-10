@@ -1,11 +1,12 @@
 "use client";
 import { Layers } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import Contact from "@/components/Contact";
 import FAQ from "@/components/FAQ";
 import Divider from "@/components/Divider";
 import Title from "@/components/ui/Title";
 import Subtitle from "@/components/ui/Subtitle";
+import { motion, useInView } from "framer-motion";
 
 const techStack = [
   {
@@ -132,22 +133,34 @@ export default function TechStackPage() {
         All My Favorite Apps!
       </h2>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {techStack.map((item, idx) => (
-          <div
-            key={idx}
-            className="flex items-center  bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
-          >
-            <div>{item.icon}</div>
-            <div>
-              <div className="text-left font-bold lg:text-lg text-gray-900">
-                {item.name}
+        {techStack.map((item, idx) => {
+          const ref = useRef(null);
+          const isInView = useInView(ref, { once: true });
+
+          return (
+            <motion.div
+              key={idx}
+              ref={ref}
+              className="flex items-center  bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+            >
+              <div>{item.icon}</div>
+              <div>
+                <div className="text-left font-bold lg:text-lg text-gray-900">
+                  {item.name}
+                </div>
+                <div className="text-left text-gray-500 text-xs lg:text-sm">
+                  {item.description}
+                </div>
               </div>
-              <div className="text-left text-gray-500 text-xs lg:text-sm">
-                {item.description}
-              </div>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
 
       <Divider className="my-10" />
@@ -157,26 +170,38 @@ export default function TechStackPage() {
         All My Gear Items!
       </h2>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mb-14">
-        {techGear.map((item) => (
-          <div className="flex flex-col w-full">
-            <div
+        {techGear.map((item, idx) => {
+          const ref = useRef(null);
+          const isInView = useInView(ref, { once: true });
+
+          return (
+            <motion.div
               key={item.name}
-              className="bg-white rounded-xl border border-gray-200 flex flex-col items-center p-4 w-full"
+              ref={ref}
+              className="flex flex-col w-full"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeOut",
+              }}
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-28 h-28 object-contain mb-4 rounded-lg"
-              />
-            </div>
-            <p className="font-semibold text-lg mb-1 mt-2 text-left">
-              {item.name}
-            </p>
-            <p className="text-left text-gray-500 text-[13px] w-full">
-              {item.description}
-            </p>
-          </div>
-        ))}
+              <div className="bg-white rounded-xl border border-gray-200 flex flex-col items-center p-4 w-full">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-28 h-28 object-contain mb-4 rounded-lg"
+                />
+              </div>
+              <p className="font-semibold text-lg mb-1 mt-2 text-left">
+                {item.name}
+              </p>
+              <p className="text-left text-gray-500 text-[13px] w-full">
+                {item.description}
+              </p>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Contact section */}
