@@ -1,20 +1,21 @@
 import { Github, Instagram, Mail, Twitter, Youtube } from "lucide-react";
 import React from "react";
 import Divider from "./Divider";
+import Link from "next/link";
 
 const socialLinks = [
   {
-    href: "#",
+    href: "https://x.com/",
     label: "Twitter",
     icon: <Twitter className="w-5 h-5" />,
   },
   {
-    href: "#",
+    href: "https://www.instagram.com/",
     label: "Instagram",
     icon: <Instagram className="w-5 h-5" />,
   },
   {
-    href: "#",
+    href: "https://www.youtube.com/",
     label: "YouTube",
     icon: <Youtube className="w-5 h-5" />,
   },
@@ -43,20 +44,20 @@ const Contact = () => {
           to me!
         </p>
         <div className="flex gap-4 mb-2">
-          <a
-            href="#"
+          <Link
+            href="https://x.com/"
             className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm"
           >
             <Twitter className="w-4 h-4" />
             Twitter
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/contact"
             className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm "
           >
             <Mail className="w-4 h-4" />
             Email Me
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -76,14 +77,15 @@ const Contact = () => {
 
         <div className="flex justify-center my-3 md:my-0 lg:justify-end gap-4">
           {socialLinks.map((s, idx) => (
-            <a
+            <Link
               key={idx}
               href={s.href}
+              target="_blank"
               className="text-gray-800 transition"
               aria-label={s.label}
             >
               {s.icon}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

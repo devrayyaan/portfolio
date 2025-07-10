@@ -1,4 +1,5 @@
 import { Layers } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 const techStack = [
@@ -12,6 +13,7 @@ const techStack = [
     ),
     name: "Arc",
     description: "Best Productivity Browser.",
+    link: "https://arc.net",
   },
   {
     icon: (
@@ -23,6 +25,7 @@ const techStack = [
     ),
     name: "Framer",
     description: "Build Next Level Websites.",
+    link: "https://framer.com",
   },
   {
     icon: (
@@ -34,6 +37,7 @@ const techStack = [
     ),
     name: "Superhuman",
     description: "Simple & Powerful Email.",
+    link: "https://superhuman.com",
   },
   {
     icon: (
@@ -45,6 +49,7 @@ const techStack = [
     ),
     name: "LemonSqueezy",
     description: "Easy Checkout Solution",
+    link: "https://lemonsqueezy.com",
   },
   {
     icon: (
@@ -56,6 +61,7 @@ const techStack = [
     ),
     name: "Things 3",
     description: "Manage Daily Tasks.",
+    link: "https://things.com",
   },
   {
     icon: (
@@ -67,6 +73,7 @@ const techStack = [
     ),
     name: "Figma",
     description: "Best Design Tool.",
+    link: "https://figma.com",
   },
 ];
 
@@ -82,9 +89,10 @@ const TechStack = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           {techStack.map((item, idx) => (
-            <div
+            <Link
               key={idx}
-              className="flex items-center bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
+              className="hover:bg-gray-100 transition-all duration-300 cursor-pointer flex items-center bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
+              href={item.link}
             >
               <div>{item.icon}</div>
               <div>
@@ -95,15 +103,15 @@ const TechStack = () => {
                   {item.description}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-        <a
-          href="#"
-          className="text-sm text-black font-medium flex items-center gap-1 hover:underline text-base"
+        <Link
+          href="/tech-stack"
+          className="text-sm text-black font-medium flex items-center gap-1 text-base hover:gap-2 transition-all duration-300"
         >
           View Full Stack <span className="text-lg">→</span>
-        </a>
+        </Link>
       </div>
     </div>
   );

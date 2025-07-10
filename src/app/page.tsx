@@ -8,8 +8,11 @@ import { ArrowRight, Briefcase } from "lucide-react";
 import HappyCustomers from "@/components/HappyCustomers";
 import TechStack from "@/components/TechStack";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="p-3 lg:p-0 min-h-[100vh]">
       <div className="pt-[57px] flex flex-col gap-[12px]">
@@ -43,6 +46,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
+            onClick={() => router.push("/contact")}
           >
             <span>Start a project</span> <ArrowRight className="w-4 h-4" />
           </motion.button>
@@ -51,6 +55,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            onClick={() => router.push("/about")}
           >
             <span>About Me</span> <ArrowRight className="w-4 h-4" />
           </motion.button>

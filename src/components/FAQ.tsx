@@ -1,6 +1,7 @@
 "use client";
 import { CircleQuestionMark, Plus, X } from "lucide-react";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -120,17 +121,35 @@ function FAQItem({
         <span className="text-[15px] font-medium text-black text-left">
           {faq.question}
         </span>
-        {open.includes(faq.id) ? (
-          <X className="w-4 h-4 text-gray-700" />
-        ) : (
-          <Plus className="w-4 h-4 text-gray-700" />
-        )}
+        <motion.div
+          animate={{ rotate: open.includes(faq.id) ? 45 : 0 }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
+        >
+          <Plus
+            className={`w-4 h-4 ${
+              open.includes(faq.id) ? "text-black" : "text-gray-400"
+            }`}
+          />
+        </motion.div>
       </div>
-      {open.includes(faq.id) && (
-        <div className="text-gray-600 text-left mt-4 text-sm font-light">
-          {faq.answer}
-        </div>
-      )}
+      <AnimatePresence>
+        {open.includes(faq.id) && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="overflow-hidden"
+          >
+            <div className="text-gray-600 text-left mt-4 text-sm font-light">
+              {faq.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </button>
   );
 }
