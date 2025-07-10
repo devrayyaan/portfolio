@@ -2,6 +2,7 @@ import { Github, Instagram, Mail, Twitter, Youtube } from "lucide-react";
 import React from "react";
 import Divider from "./Divider";
 import Link from "next/link";
+import Image from "next/image";
 
 const socialLinks = [
   {
@@ -24,7 +25,29 @@ const socialLinks = [
 const Contact = () => {
   return (
     <div className="w-full flex flex-col gap-8 items-center">
-      <div className="bg-left lg:bg-center w-full h-full lg:max-w-5xl rounded-2xl border p-4 py-10 lg:p-12 flex flex-col items-center overflow-hidden transition-colors duration-200">
+      <div
+        className="relative bg-left lg:bg-center w-full h-full lg:max-w-5xl rounded-2xl border p-4 py-10 lg:p-12 flex flex-col items-center overflow-hidden transition-colors duration-200 border-[var(--color-border)]"
+        style={{
+          background: "var(--color-background-gradient)",
+        }}
+      >
+        {/* Bottom left gradient */}
+        <Image
+          src="/contact-gradient.png"
+          alt="Contact Background"
+          className="absolute bottom-[-190px] left-[-190px]"
+          width={500}
+          height={500}
+        />
+
+        <Image
+          src="/contact-gradient.png"
+          alt="Contact Background"
+          className="absolute top-[-150px] right-[-190px]"
+          width={500}
+          height={500}
+        />
+
         <div
           className="text-sm font-bold mb-2 flex items-center gap-1 transition-colors duration-200"
           style={{ color: "var(--color-text-heading)" }}

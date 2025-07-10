@@ -28,6 +28,7 @@ export default function Navbar() {
   const [active, setActive] = useState(-1);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isDark, setIsDark] = useState(false);
+  const [showThemeTooltip, setShowThemeTooltip] = useState(false);
   const router = useRouter();
 
   const handleClick = (idx: number) => {
@@ -57,6 +58,7 @@ export default function Navbar() {
 
     // Check for saved theme preference
     const savedTheme = localStorage.getItem("theme");
+    console.log(savedTheme);
     setIsDark(savedTheme === "dark");
   }, []);
 
@@ -132,6 +134,8 @@ export default function Navbar() {
       })}
 
       <button
+        onMouseEnter={() => setShowThemeTooltip(true)}
+        onMouseLeave={() => setShowThemeTooltip(false)}
         onClick={toggleTheme}
         className="cursor-pointer w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-xl border transition-all hover:text-[var(--color-text-heading)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-background-tertiary)]"
         style={{
@@ -142,6 +146,31 @@ export default function Navbar() {
         type="button"
       >
         {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        <AnimatePresence>
+          {showThemeTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.9 }}
+              transition={{ duration: 0.1, ease: "easeOut" }}
+              className="absolute bottom-full  mb-3 px-3 py-2 text-sm rounded-lg whitespace-nowrap z-20 transition-colors duration-200"
+              style={{
+                backgroundColor: "var(--color-background-tooltip)",
+                color: "var(--color-text-tooltip)",
+                border: "1px solid var(--color-border-tooltip)",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              {isDark ? "Light Mode" : "Dark Mode"}
+              <div
+                className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent"
+                style={{
+                  borderTopColor: "var(--color-background-tooltip)",
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </button>
     </nav>
   );

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-[data-theme="light"],
 .light {
   /* Backgrounds */
   --color-background: #f9fafb; /* light gray */
@@ -10,6 +9,7 @@
   --color-background-tooltip: #1e1e20;
   --color-border-tooltip: #272424;
   --color-text-tooltip: #f9fafb;
+  --color-background-gradient: linear-gradient(to right, #ffedd5, #dbeafe);
 
   /* Text */
   --color-text-heading: #111827; /* gray-900 */
@@ -46,7 +46,6 @@
   --color-gradient-to: #9ca3af; /* gray-400 */
 }
 
-[data-theme="dark"],
 .dark {
   --color-background: #18181b;
   --color-background-secondary: #23232a;
@@ -55,6 +54,7 @@
   --color-background-tooltip: #3c4046;
   --color-border-tooltip: #3e4147;
   --color-text-tooltip: #f9fafb;
+  --color-background-gradient: linear-gradient(to right, #7c2d12, #1e3a8a);
 
   --color-text-heading: #fff;
   --color-text-body: #e5e7eb;

@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`w-full pt-[20px] pb-[150px] lg:pt-[50px] lg:pb-[100px] transition-colors duration-200 ${dmSans.className}`}
         style={{
@@ -58,7 +58,7 @@ export default function RootLayout({
           color: "var(--color-text-body)",
         }}
       >
-        <ThemeProvider defaultTheme="light" attribute="class">
+        <ThemeProvider defaultTheme="system" enableSystem attribute="class">
           <div
             className="w-[90vw] lg:max-w-4xl mx-auto rounded-2xl px-2 py-4 lg:px-[40px] lg:py-[30px] transition-colors duration-200"
             style={{
