@@ -60,10 +60,9 @@ export default function TechGear() {
       </h2>
       {/* Grid */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
-        {techGear.map((item) => (
-          <div className="flex flex-col w-full">
+        {techGear.map((item, idx) => (
+          <div className="flex flex-col w-full" key={idx}>
             <div
-              key={item.name}
               className="rounded-xl border flex flex-col items-center p-4 w-full transition-colors duration-200"
               style={{
                 backgroundColor: "var(--color-background-secondary)",

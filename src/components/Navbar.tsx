@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
@@ -30,6 +30,7 @@ export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const [showThemeTooltip, setShowThemeTooltip] = useState(false);
   const router = useRouter();
+  const location = usePathname();
 
   const handleClick = (idx: number) => {
     setActive(idx);
@@ -51,16 +52,21 @@ export default function Navbar() {
 
   useEffect(() => {
     const path = window.location.pathname;
+    console.log(path);
     const idx = navItems.findIndex((item) => item.href === path);
     if (idx !== -1) {
       setActive(idx);
+    } else if (path.startsWith("/projects")) {
+      setActive(1);
+    } else if (path.startsWith("/contact")) {
+      setActive(3);
     }
 
     // Check for saved theme preference
     const savedTheme = localStorage.getItem("theme");
     console.log(savedTheme);
     setIsDark(savedTheme === "dark");
-  }, []);
+  }, [location]);
 
   return (
     <nav

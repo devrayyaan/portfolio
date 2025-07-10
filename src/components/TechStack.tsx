@@ -1,5 +1,6 @@
 import { Layers } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 const techStack = [

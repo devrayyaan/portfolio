@@ -1,5 +1,4 @@
 "use client";
-import { ArrowRight, Briefcase, Search } from "lucide-react";
 import React from "react";
 import Contact from "@/components/Contact";
 import TechStack from "@/components/TechStack";
@@ -7,6 +6,7 @@ import FAQ from "@/components/FAQ";
 import TechGear from "@/components/TechGear";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 export default function AboutPage() {
   const firstParagraphRef = useRef(null);
@@ -58,7 +58,7 @@ export default function AboutPage() {
           ease: "easeOut",
         }}
       >
-        Hey, I'm{" "}
+        Hey, I&apos;m{" "}
         <span
           className="transition-colors duration-200"
           style={{ color: "var(--color-primary)" }}
@@ -83,11 +83,12 @@ export default function AboutPage() {
           ease: "easeOut",
         }}
       >
-        I'm all about blending aesthetics and functionality to deliver
+        I&apos;m all about blending aesthetics and functionality to deliver
         exceptional designs. From creating user-friendly interfaces to exploring
-        cutting-edge interactions, I'm passionate about innovation. Let's
-        connect and take your web and interface designs to the next level
-        together. Get ready for stunning visuals and immersive user experiences!
+        cutting-edge interactions, I&apos;m passionate about innovation.
+        Let&apos;s connect and take your web and interface designs to the next
+        level together. Get ready for stunning visuals and immersive user
+        experiences!
       </motion.p>
 
       {/* Tech Stack section */}

@@ -2,12 +2,12 @@
 import { Layers } from "lucide-react";
 import React, { useRef } from "react";
 import Contact from "@/components/Contact";
-import FAQ from "@/components/FAQ";
 import Divider from "@/components/Divider";
 import Title from "@/components/ui/Title";
 import Subtitle from "@/components/ui/Subtitle";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const techStack = [
   {
@@ -147,45 +147,7 @@ export default function TechStackPage() {
       </h2>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         {techStack.map((item, idx) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true });
-
-          return (
-            <Link href={item.link} target="_blank">
-              <motion.div
-                key={idx}
-                ref={ref}
-                className="flex items-center hover:bg-[var(--color-background-tertiary)] cursor-pointer bg-transparent rounded-xl p-2 px-3 gap-4 border transition-colors duration-200"
-                style={{
-                  borderColor: "var(--color-border)",
-                }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                }
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                }}
-              >
-                <div>{item.icon}</div>
-                <div>
-                  <div
-                    className="text-left font-bold lg:text-lg transition-colors duration-200"
-                    style={{ color: "var(--color-text-heading)" }}
-                  >
-                    {item.name}
-                  </div>
-                  <div
-                    className="text-left text-xs lg:text-sm transition-colors duration-200"
-                    style={{ color: "var(--color-text-muted)" }}
-                  >
-                    {item.description}
-                  </div>
-                </div>
-              </motion.div>
-            </Link>
-          );
+          return <TechStackItem key={idx} item={item} />;
         })}
       </div>
 
@@ -200,53 +162,97 @@ export default function TechStackPage() {
       </h2>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mb-14">
         {techGear.map((item, idx) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true });
-
-          return (
-            <motion.div
-              key={item.name}
-              ref={ref}
-              className="flex flex-col w-full"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-              }}
-            >
-              <div
-                className="rounded-xl border flex flex-col items-center p-4 w-full transition-colors duration-200"
-                style={{
-                  backgroundColor: "var(--color-background-secondary)",
-                  borderColor: "var(--color-border)",
-                }}
-              >
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-28 h-28 object-contain mb-4 rounded-lg"
-                />
-              </div>
-              <p
-                className="font-semibold text-lg mb-1 mt-2 text-left transition-colors duration-200"
-                style={{ color: "var(--color-text-heading)" }}
-              >
-                {item.name}
-              </p>
-              <p
-                className="text-left text-[13px] w-full transition-colors duration-200"
-                style={{ color: "var(--color-text-muted)" }}
-              >
-                {item.description}
-              </p>
-            </motion.div>
-          );
+          return <TechGearItem key={idx} item={item} />;
         })}
       </div>
 
       {/* Contact section */}
       <Contact />
     </div>
+  );
+}
+
+function TechStackItem({ item }: { item: any }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <Link href={item.link} target="_blank">
+      <motion.div
+        ref={ref}
+        className="flex items-center hover:bg-[var(--color-background-tertiary)] cursor-pointer bg-transparent rounded-xl p-2 px-3 gap-4 border transition-colors duration-200"
+        style={{
+          borderColor: "var(--color-border)",
+        }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+        }}
+      >
+        <div>{item.icon}</div>
+        <div>
+          <div
+            className="text-left font-bold lg:text-lg transition-colors duration-200"
+            style={{ color: "var(--color-text-heading)" }}
+          >
+            {item.name}
+          </div>
+          <div
+            className="text-left text-xs lg:text-sm transition-colors duration-200"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            {item.description}
+          </div>
+        </div>
+      </motion.div>
+    </Link>
+  );
+}
+
+function TechGearItem({ item }: { item: any }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="flex flex-col w-full"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+      }}
+    >
+      <div
+        className="rounded-xl border flex flex-col items-center p-4 w-full transition-colors duration-200"
+        style={{
+          backgroundColor: "var(--color-background-secondary)",
+          borderColor: "var(--color-border)",
+        }}
+      >
+        <Image
+          src={item.image}
+          alt={item.name}
+          className="w-28 h-28 object-contain mb-4 rounded-lg"
+          width={112}
+          height={112}
+        />
+      </div>
+      <p
+        className="font-semibold text-lg mb-1 mt-2 text-left transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
+        {item.name}
+      </p>
+      <p
+        className="text-left text-[13px] w-full transition-colors duration-200"
+        style={{ color: "var(--color-text-muted)" }}
+      >
+        {item.description}
+      </p>
+    </motion.div>
   );
 }

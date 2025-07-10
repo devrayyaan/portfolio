@@ -1,5 +1,5 @@
 "use client";
-import { CircleQuestionMark, Plus, X } from "lucide-react";
+import { CircleQuestionMark, Plus } from "lucide-react";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 

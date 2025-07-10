@@ -1,4 +1,4 @@
-import { Github, Instagram, Mail, Twitter, Youtube } from "lucide-react";
+import { Instagram, Mail, Twitter, Youtube } from "lucide-react";
 import React from "react";
 import Divider from "./Divider";
 import Link from "next/link";
@@ -58,14 +58,14 @@ const Contact = () => {
           className="text-2xl lg:text-4xl font-extrabold text-center mb-4 transition-colors duration-200"
           style={{ color: "var(--color-text-heading)" }}
         >
-          Let's Connect!
+          Let&apos;s Connect!
         </h2>
         <p
           className="text-sm lg:text-lg text-center mb-8 w-full lg:max-w-xl transition-colors duration-200"
           style={{ color: "var(--color-text-muted)" }}
         >
-          Let's create something unique together! Here's how you can reach out
-          to me!
+          Let&apos;s create something unique together! Here&apos;s how you can
+          reach out to me!
         </p>
         <div className="flex gap-4 mb-2">
           <Link
