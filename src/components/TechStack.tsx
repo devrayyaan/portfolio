@@ -6,7 +6,7 @@ const techStack = [
   {
     icon: (
       <img
-        src="https://arc.net/_next/static/media/icon.8c3e2e7e.svg"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt=""
         className="w-8 h-8"
       />
@@ -18,7 +18,7 @@ const techStack = [
   {
     icon: (
       <img
-        src="https://framerusercontent.com/images/Framer-Logo.svg"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt=""
         className="w-8 h-8"
       />
@@ -30,7 +30,7 @@ const techStack = [
   {
     icon: (
       <img
-        src="https://superhuman.com/images/logo.png"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt=""
         className="w-8 h-8 rounded"
       />
@@ -42,7 +42,7 @@ const techStack = [
   {
     icon: (
       <img
-        src="https://avatars.githubusercontent.com/u/6342852?s=200&v=4"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt=""
         className="w-8 h-8 rounded"
       />
@@ -54,7 +54,7 @@ const techStack = [
   {
     icon: (
       <img
-        src="https://cdn.cultofmac.com/wp-content/uploads/2017/05/things-3-icon.png"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt=""
         className="w-8 h-8 rounded"
       />

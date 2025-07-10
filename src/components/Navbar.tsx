@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
-  { icon: Store, label: "Store", href: "/store" },
   { icon: Briefcase, label: "Projects", href: "/projects" },
   { icon: User, label: "About", href: "/about" },
   { icon: Send, label: "Contact", href: "/contact" },

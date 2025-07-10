@@ -14,19 +14,6 @@ export default function ProjectsPage() {
       </div>
       <Title text="Projects I've Worked On!" />
       <Subtitle text="In my past experience, I have had the opportunity to work on diverse projects and collaborate with renowned brands." />
-      {/* Search Input */}
-      <div className="w-full max-w-sm">
-        <div className="relative">
-          <span className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-black" />
-          </span>
-          <input
-            type="text"
-            placeholder="Search For Products"
-            className="bg-white w-full max-w-xs pl-10 pr-4 py-2.5 rounded-xl border border-gray-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-base bg-transparent placeholder-gray-400"
-          />
-        </div>
-      </div>
 
       <ProjectsList />
       <Contact />

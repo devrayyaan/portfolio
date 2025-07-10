@@ -1,10 +1,9 @@
 "use client";
 import Divider from "@/components/Divider";
 import LatestWork from "@/components/LatestWork";
-import LatestReleases from "@/components/LatestReleases";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import HappyCustomers from "@/components/HappyCustomers";
 import TechStack from "@/components/TechStack";
 import { motion } from "framer-motion";
@@ -64,9 +63,6 @@ export default function Home() {
 
       <Divider className="mt-16 mb-12" />
       <LatestWork />
-
-      <Divider className="mt-2 mb-10" />
-      <LatestReleases />
 
       <Divider className="mt-2 mb-4" />
       <HappyCustomers />
