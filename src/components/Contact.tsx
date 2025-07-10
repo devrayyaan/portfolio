@@ -24,36 +24,47 @@ const socialLinks = [
 const Contact = () => {
   return (
     <div className="w-full flex flex-col gap-8 items-center">
-      <div
-        style={{
-          backgroundImage: `url("/bg-gradient.png")`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: "transparent",
-        }}
-        className="bg-left lg:bg-center w-full h-full lg:max-w-5xl rounded-2xl border border-gray-300 p-4 py-10 lg:p-12 flex flex-col items-center overflow-hidden"
-      >
-        <div className="text-sm font-bold text-gray-800 mb-2 flex items-center gap-1">
+      <div className="bg-left lg:bg-center w-full h-full lg:max-w-5xl rounded-2xl border p-4 py-10 lg:p-12 flex flex-col items-center overflow-hidden transition-colors duration-200">
+        <div
+          className="text-sm font-bold mb-2 flex items-center gap-1 transition-colors duration-200"
+          style={{ color: "var(--color-text-heading)" }}
+        >
           Say hello <span>👋</span>
         </div>
-        <h2 className="text-2xl lg:text-4xl font-extrabold text-black text-center mb-4">
+        <h2
+          className="text-2xl lg:text-4xl font-extrabold text-center mb-4 transition-colors duration-200"
+          style={{ color: "var(--color-text-heading)" }}
+        >
           Let's Connect!
         </h2>
-        <p className="text-gray-500 text-sm lg:text-lg text-center mb-8 w-full lg:max-w-xl">
+        <p
+          className="text-sm lg:text-lg text-center mb-8 w-full lg:max-w-xl transition-colors duration-200"
+          style={{ color: "var(--color-text-muted)" }}
+        >
           Let's create something unique together! Here's how you can reach out
           to me!
         </p>
         <div className="flex gap-4 mb-2">
           <Link
             href="https://x.com/"
-            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm"
+            className="flex items-center gap-2 p-2 px-3 rounded-lg border font-medium text-sm transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-background-secondary)",
+              borderColor: "var(--color-border-strong)",
+              color: "var(--color-text-body)",
+            }}
           >
             <Twitter className="w-4 h-4" />
             Twitter
           </Link>
           <Link
             href="/contact"
-            className="flex items-center gap-2 p-2 px-3 rounded-lg border border-gray-300 bg-gray-100 font-medium text-sm "
+            className="flex items-center gap-2 p-2 px-3 rounded-lg border font-medium text-sm transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-background-secondary)",
+              borderColor: "var(--color-border-strong)",
+              color: "var(--color-text-body)",
+            }}
           >
             <Mail className="w-4 h-4" />
             Email Me
@@ -66,9 +77,20 @@ const Contact = () => {
           <input
             type="email"
             placeholder="Subscribe to Newsletter"
-            className="w-[65%] flex-2 md:w-auto p-3 text-sm rounded-lg bg-gray-100 text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
+            className="w-[65%] flex-2 md:w-auto p-3 text-sm rounded-lg focus:outline-none focus:ring-2 transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-background-tertiary)",
+              color: "var(--color-text-body)",
+              border: "1px solid var(--color-border)",
+            }}
           />
-          <button className="px-2 md:px-3 py-3 rounded-lg text-sm bg-orange-500 text-white font-semibold hover:bg-orange-600 transition">
+          <button
+            className="px-2 md:px-3 py-3 rounded-lg text-sm font-semibold transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-primary)",
+              color: "var(--color-text-inverse)",
+            }}
+          >
             Subscribe
           </button>
         </div>
@@ -81,7 +103,8 @@ const Contact = () => {
               key={idx}
               href={s.href}
               target="_blank"
-              className="text-gray-800 transition"
+              className="transition-colors duration-200 hover:text-[var(--color-primary)]"
+              style={{ color: "var(--color-text-heading)" }}
               aria-label={s.label}
             >
               {s.icon}

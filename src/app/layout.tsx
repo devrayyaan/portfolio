@@ -5,6 +5,7 @@ import { DM_Sans } from "next/font/google";
 
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "next-themes";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -49,15 +50,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="dark">
       <body
-        className={` bg-gray-50 w-full pt-[20px] pb-[150px] lg:pt-[50px] lg:pb-[100px] ${dmSans.className}`}
+        className={`w-full pt-[20px] pb-[150px] lg:pt-[50px] lg:pb-[100px] transition-colors duration-200 ${dmSans.className}`}
+        style={{
+          backgroundColor: "var(--color-background)",
+          color: "var(--color-text-body)",
+        }}
       >
-        <div className="w-[90vw] lg:max-w-4xl mx-auto border border-gray-300 rounded-2xl px-2 py-4 lg:px-[40px] lg:py-[30px]">
-          <Header />
-          <Navbar />
-          {children}
-        </div>
+        <ThemeProvider defaultTheme="light" attribute="class">
+          <div
+            className="w-[90vw] lg:max-w-4xl mx-auto rounded-2xl px-2 py-4 lg:px-[40px] lg:py-[30px] transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-background-secondary)",
+              border: "1px solid var(--color-border-strong)",
+            }}
+          >
+            <Header />
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

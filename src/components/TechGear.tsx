@@ -12,31 +12,31 @@ const techGear = [
   {
     name: "LG 32UN650",
     image:
-      "https://www.lg.com/us/images/monitors/md07501316/gallery/desktop-01.jpg",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "A good monitor, but thinking to change it soon.",
   },
   {
     name: "Magic Keyboard",
     image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MK2A3LL_A?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632937848000",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "Minimal, wireless, and reliable.",
   },
   {
     name: "MX Master 3S",
     image:
-      "https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-top-view-graphite.png?v=1",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "The best mouse for productivity and comfort.",
   },
   {
     name: "Magic Keyboard",
     image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MK2A3LL_A?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632937848000",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "Minimal, wireless, and reliable.",
   },
   {
     name: "MX Master 3S",
     image:
-      "https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-top-view-graphite.png?v=1",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "The best mouse for productivity and comfort.",
   },
 ];
@@ -46,10 +46,16 @@ export default function TechGear() {
     <div className="flex flex-col items-center justify-center py-12">
       {/* Gear Icon */}
       <div className="mb-4">
-        <Settings className="w-10 h-10 text-orange-500" />
+        <Settings
+          className="w-10 h-10 transition-colors duration-200"
+          style={{ color: "var(--color-primary)" }}
+        />
       </div>
       {/* Heading */}
-      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-3xl md:text-4xl font-bold text-transparent mb-2 text-center">
+      <h2
+        className="text-3xl md:text-4xl font-bold mb-2 text-center transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         My Tech Gear
       </h2>
       {/* Grid */}
@@ -58,7 +64,11 @@ export default function TechGear() {
           <div className="flex flex-col w-full">
             <div
               key={item.name}
-              className="bg-white rounded-xl border border-gray-200 flex flex-col items-center p-4 w-full"
+              className="rounded-xl border flex flex-col items-center p-4 w-full transition-colors duration-200"
+              style={{
+                backgroundColor: "var(--color-background-secondary)",
+                borderColor: "var(--color-border)",
+              }}
             >
               <img
                 src={item.image}
@@ -66,10 +76,16 @@ export default function TechGear() {
                 className="w-28 h-28 object-contain mb-4 rounded-lg"
               />
             </div>
-            <p className="font-semibold text-lg mb-1 mt-2 text-left">
+            <p
+              className="font-semibold text-lg mb-1 mt-2 text-left transition-colors duration-200"
+              style={{ color: "var(--color-text-heading)" }}
+            >
               {item.name}
             </p>
-            <p className="text-left text-gray-500 text-[13px] w-full">
+            <p
+              className="text-left text-[13px] w-full transition-colors duration-200"
+              style={{ color: "var(--color-text-muted)" }}
+            >
               {item.description}
             </p>
           </div>

@@ -68,8 +68,14 @@ const FAQ = () => {
 
   return (
     <div className="w-full flex flex-col items-center py-12">
-      <CircleQuestionMark className="w-8 h-8 text-orange-500 mb-2" />
-      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-2xl md:text-4xl font-bold text-transparent text-center mb-12">
+      <CircleQuestionMark
+        className="w-8 h-8 mb-2 transition-colors duration-200"
+        style={{ color: "var(--color-primary)" }}
+      />
+      <h2
+        className="text-2xl md:text-4xl font-bold text-center mb-12 transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         Frequently Asked Questions
       </h2>
 
@@ -112,13 +118,20 @@ function FAQItem({
 }) {
   return (
     <button
-      className="flex flex-col bg-transparent rounded-xl border border-gray-300 px-4 py-3 text-lg font-medium text-gray-700 cursor-pointer w-full"
+      className="flex flex-col bg-transparent rounded-xl border px-4 py-3 text-lg font-medium cursor-pointer w-full transition-colors duration-200"
+      style={{
+        borderColor: "var(--color-border-strong)",
+        color: "var(--color-text-body)",
+      }}
       onClick={() => handleOpen(faq.id)}
       aria-expanded={open === faq.id}
       aria-controls={`faq-panel-${faq.id}`}
     >
       <div className="flex items-center justify-between">
-        <span className="text-[15px] font-medium text-black text-left">
+        <span
+          className="text-[15px] font-medium text-left transition-colors duration-200"
+          style={{ color: "var(--color-text-heading)" }}
+        >
           {faq.question}
         </span>
         <motion.div
@@ -126,9 +139,14 @@ function FAQItem({
           transition={{ duration: 0.1, ease: "easeInOut" }}
         >
           <Plus
-            className={`w-4 h-4 ${
-              open.includes(faq.id) ? "text-black" : "text-gray-400"
+            className={`w-4 h-4 transition-colors duration-200 ${
+              open.includes(faq.id) ? "" : ""
             }`}
+            style={{
+              color: open.includes(faq.id)
+                ? "var(--color-text-heading)"
+                : "var(--color-text-muted)",
+            }}
           />
         </motion.div>
       </div>
@@ -144,7 +162,10 @@ function FAQItem({
             }}
             className="overflow-hidden"
           >
-            <div className="text-gray-600 text-left mt-4 text-sm font-light">
+            <div
+              className="text-left mt-4 text-sm font-light transition-colors duration-200"
+              style={{ color: "var(--color-text-muted)" }}
+            >
               {faq.answer}
             </div>
           </motion.div>

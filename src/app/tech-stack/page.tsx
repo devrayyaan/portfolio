@@ -7,62 +7,68 @@ import Divider from "@/components/Divider";
 import Title from "@/components/ui/Title";
 import Subtitle from "@/components/ui/Subtitle";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const techStack = [
   {
     icon: (
       <img
-        src="https://arc.net/_next/static/media/icon.8c3e2e7e.svg"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt="Arc"
         className="w-8 h-8"
       />
     ),
     name: "Arc",
     description: "Best Productivity Browser.",
+    link: "https://arc.net",
   },
   {
     icon: (
       <img
-        src="https://framerusercontent.com/images/Framer-Logo.svg"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt="Framer"
         className="w-8 h-8"
       />
     ),
     name: "Framer",
     description: "Build Next Level Websites.",
+    link: "https://framer.com",
   },
   {
     icon: (
       <img
-        src="https://superhuman.com/images/logo.png"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt="Superhuman"
         className="w-8 h-8 rounded"
       />
     ),
     name: "Superhuman",
     description: "Simple & Powerful Email.",
+    link: "https://superhuman.com",
   },
   {
     icon: (
       <img
-        src="https://avatars.githubusercontent.com/u/6342852?s=200&v=4"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt="LemonSqueezy"
         className="w-8 h-8 rounded"
       />
     ),
     name: "LemonSqueezy",
     description: "Easy Checkout Solution",
+    link: "https://lemonsqueezy.com",
   },
   {
     icon: (
       <img
-        src="https://cdn.cultofmac.com/wp-content/uploads/2017/05/things-3-icon.png"
+        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
         alt="Things 3"
         className="w-8 h-8 rounded"
       />
     ),
     name: "Things 3",
     description: "Manage Daily Tasks.",
+    link: "https://things.com",
   },
   {
     icon: (
@@ -74,6 +80,7 @@ const techStack = [
     ),
     name: "Figma",
     description: "Best Design Tool.",
+    link: "https://figma.com",
   },
 ];
 
@@ -122,14 +129,20 @@ export default function TechStackPage() {
     <div className="mt-14 flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
       {/* Shop Icon */}
       <div className="mb-4">
-        <Layers className="w-10 h-10 text-orange-500" />
+        <Layers
+          className="w-10 h-10 transition-colors duration-200"
+          style={{ color: "var(--color-primary)" }}
+        />
       </div>
       <Title text="My Tech Stack & Gear" />
       <Subtitle text="I use a lot of Tools everyday. but here are some of My top Favorite Tools that I use & Love and I think you should too." />
       <Divider className="mb-10 mt-14" />
 
       {/* Tech stack */}
-      <h2 className="mr-auto text-xl md:text-2xl font-bold mb-8">
+      <h2
+        className="mr-auto text-xl md:text-2xl font-bold mb-8 transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         All My Favorite Apps!
       </h2>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -138,27 +151,40 @@ export default function TechStackPage() {
           const isInView = useInView(ref, { once: true });
 
           return (
-            <motion.div
-              key={idx}
-              ref={ref}
-              className="flex items-center  bg-transparent rounded-xl p-2 px-3 gap-4 border border-gray-200"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{
-                duration: 0.6,
-                ease: "easeOut",
-              }}
-            >
-              <div>{item.icon}</div>
-              <div>
-                <div className="text-left font-bold lg:text-lg text-gray-900">
-                  {item.name}
+            <Link href={item.link} target="_blank">
+              <motion.div
+                key={idx}
+                ref={ref}
+                className="flex items-center hover:bg-[var(--color-background-tertiary)] cursor-pointer bg-transparent rounded-xl p-2 px-3 gap-4 border transition-colors duration-200"
+                style={{
+                  borderColor: "var(--color-border)",
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+              >
+                <div>{item.icon}</div>
+                <div>
+                  <div
+                    className="text-left font-bold lg:text-lg transition-colors duration-200"
+                    style={{ color: "var(--color-text-heading)" }}
+                  >
+                    {item.name}
+                  </div>
+                  <div
+                    className="text-left text-xs lg:text-sm transition-colors duration-200"
+                    style={{ color: "var(--color-text-muted)" }}
+                  >
+                    {item.description}
+                  </div>
                 </div>
-                <div className="text-left text-gray-500 text-xs lg:text-sm">
-                  {item.description}
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           );
         })}
       </div>
@@ -166,7 +192,10 @@ export default function TechStackPage() {
       <Divider className="my-10" />
 
       {/* Tech Gear */}
-      <h2 className="mr-auto text-xl md:text-2xl font-bold">
+      <h2
+        className="mr-auto text-xl md:text-2xl font-bold transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         All My Gear Items!
       </h2>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full mb-14">
@@ -186,17 +215,29 @@ export default function TechStackPage() {
                 ease: "easeOut",
               }}
             >
-              <div className="bg-white rounded-xl border border-gray-200 flex flex-col items-center p-4 w-full">
+              <div
+                className="rounded-xl border flex flex-col items-center p-4 w-full transition-colors duration-200"
+                style={{
+                  backgroundColor: "var(--color-background-secondary)",
+                  borderColor: "var(--color-border)",
+                }}
+              >
                 <img
                   src={item.image}
                   alt={item.name}
                   className="w-28 h-28 object-contain mb-4 rounded-lg"
                 />
               </div>
-              <p className="font-semibold text-lg mb-1 mt-2 text-left">
+              <p
+                className="font-semibold text-lg mb-1 mt-2 text-left transition-colors duration-200"
+                style={{ color: "var(--color-text-heading)" }}
+              >
                 {item.name}
               </p>
-              <p className="text-left text-gray-500 text-[13px] w-full">
+              <p
+                className="text-left text-[13px] w-full transition-colors duration-200"
+                style={{ color: "var(--color-text-muted)" }}
+              >
                 {item.description}
               </p>
             </motion.div>
