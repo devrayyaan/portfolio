@@ -12,7 +12,7 @@ export default function ContactPage() {
     <div className="mt-14 flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
       {/* Shop Icon */}
       <div className="mb-4">
-        <Send className="w-10 h-10 text-orange-500" />
+        <Send className="w-10 h-10 text-[var(--color-primary)]" />
       </div>
       {/* Heading */}
       <Title text="Let's Get in Touch!" />

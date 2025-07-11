@@ -43,7 +43,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row items-start gap-2 lg:items-center lg:gap-[20px] mt-2">
           <Link href="/contact">
             <motion.button
-              className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#F45D22] text-white font-medium"
+              className="flex items-center justify-center gap-2 rounded-[10px] hover:bg-[var(--color-primary-hover)] transition-colors duration-400 cursor-pointer p-2.5 px-6 bg-[var(--color-primary)] text-white font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export default function Home() {
           </Link>
           <Link href="/about">
             <motion.button
-              className="flex items-center justify-center gap-2 rounded-[10px] cursor-pointer p-2.5 px-6 bg-[#007BFF] text-white font-medium"
+              className="flex items-center justify-center gap-2 rounded-[10px]  cursor-pointer p-2.5 px-6 border border-[var(--color-border)] bg-[var(--color-background-tertiary)] text-[var(--color-text-body)] transition-colors duration-200 font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}

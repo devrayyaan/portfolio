@@ -9,7 +9,7 @@
   --color-background-tooltip: #1e1e20;
   --color-border-tooltip: #272424;
   --color-text-tooltip: #f9fafb;
-  --color-background-gradient: linear-gradient(to right, #ffedd5, #dbeafe);
+  --color-background-gradient: linear-gradient(to right, #fff9a9, #a3ffdc);
 
   /* Text */
   --color-text-heading: #111827; /* gray-900 */
@@ -18,8 +18,8 @@
   --color-text-inverse: #fff; /* for dark bg/buttons */
 
   /* Accent/Primary */
-  --color-primary: #f45d22; /* orange */
-  --color-primary-hover: #ea580c;
+  --color-primary: #00c97c; /* green */
+  --color-primary-hover: #008d57;
   --color-accent: #2563eb; /* blue-600 */
   --color-accent-hover: #1d4ed8;
 
@@ -54,15 +54,15 @@
   --color-background-tooltip: #3c4046;
   --color-border-tooltip: #3e4147;
   --color-text-tooltip: #f9fafb;
-  --color-background-gradient: linear-gradient(to right, #7c2d12, #1e3a8a);
+  --color-background-gradient: linear-gradient(to right, #522c00, #153b2b);
 
   --color-text-heading: #fff;
   --color-text-body: #e5e7eb;
   --color-text-muted: #a1a1aa;
   --color-text-inverse: #18181b;
 
-  --color-primary: #ff922b;
-  --color-primary-hover: #ff6f00;
+  --color-primary: #00c97c;
+  --color-primary-hover: #009e61;
   --color-accent: #60a5fa;
   --color-accent-hover: #3b82f6;
 

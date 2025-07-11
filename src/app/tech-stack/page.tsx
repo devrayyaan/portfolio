@@ -95,31 +95,31 @@ const techGear = [
   {
     name: "LG 32UN650",
     image:
-      "https://www.lg.com/us/images/monitors/md07501316/gallery/desktop-01.jpg",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "A good monitor, but thinking to change it soon.",
   },
   {
     name: "Magic Keyboard",
     image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MK2A3LL_A?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632937848000",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "Minimal, wireless, and reliable.",
   },
   {
     name: "MX Master 3S",
     image:
-      "https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-top-view-graphite.png?v=1",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "The best mouse for productivity and comfort.",
   },
   {
     name: "Magic Keyboard",
     image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MK2A3LL_A?wid=2000&hei=2000&fmt=jpeg&qlt=95&.v=1632937848000",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "Minimal, wireless, and reliable.",
   },
   {
     name: "MX Master 3S",
     image:
-      "https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-top-view-graphite.png?v=1",
+      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
     description: "The best mouse for productivity and comfort.",
   },
 ];
@@ -233,12 +233,10 @@ function TechGearItem({ item }: { item: any }) {
           borderColor: "var(--color-border)",
         }}
       >
-        <Image
+        <img
           src={item.image}
           alt={item.name}
           className="w-28 h-28 object-contain mb-4 rounded-lg"
-          width={112}
-          height={112}
         />
       </div>
       <p

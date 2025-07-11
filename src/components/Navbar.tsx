@@ -1,19 +1,11 @@
 "use client";
-import {
-  Moon,
-  Sun,
-  Home,
-  Store,
-  Briefcase,
-  User,
-  Send,
-  Layers,
-  Menu,
-} from "lucide-react";
+import { Moon, Sun, Home, Briefcase, User, Send, Layers } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
+import { setThemeCookie } from "@/utils/theme";
 
 const navItems = [
   { icon: Home, label: "Home", href: "/" },
@@ -21,16 +13,15 @@ const navItems = [
   { icon: User, label: "About", href: "/about" },
   { icon: Send, label: "Contact", href: "/contact" },
   { icon: Layers, label: "Stack", href: "/tech-stack" },
-  { icon: Menu, label: "Menu", href: "/" },
 ];
 
 export default function Navbar() {
   const [active, setActive] = useState(-1);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isDark, setIsDark] = useState(false);
   const [showThemeTooltip, setShowThemeTooltip] = useState(false);
   const router = useRouter();
   const location = usePathname();
+  const { theme, setTheme } = useTheme();
 
   const handleClick = (idx: number) => {
     setActive(idx);
@@ -38,21 +29,21 @@ export default function Navbar() {
   };
 
   const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
+    const currentTheme = localStorage.getItem("theme") || "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", newTheme);
+    setThemeCookie(newTheme);
 
     // Apply theme to document
-    if (newTheme) {
-      document.documentElement.classList.add("dark");
+    if (newTheme === "dark") {
+      setTheme("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      setTheme("light");
     }
   };
 
   useEffect(() => {
     const path = window.location.pathname;
-    console.log(path);
     const idx = navItems.findIndex((item) => item.href === path);
     if (idx !== -1) {
       setActive(idx);
@@ -61,11 +52,6 @@ export default function Navbar() {
     } else if (path.startsWith("/contact")) {
       setActive(3);
     }
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem("theme");
-    console.log(savedTheme);
-    setIsDark(savedTheme === "dark");
   }, [location]);
 
   return (
@@ -91,12 +77,12 @@ export default function Navbar() {
               className={cn(
                 "cursor-pointer w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-xl border transition-all",
                 isActive
-                  ? "border-[var(--color-accent)] text-[var(--color-text-inverse)]"
+                  ? "border-[var(--color-primary)] text-[var(--color-text-inverse)]"
                   : "border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text-heading)] hover:border-[var(--color-border-strong)] hover:bg-[var(--color-background-tertiary)]"
               )}
               style={{
                 backgroundColor: isActive
-                  ? "var(--color-accent)"
+                  ? "var(--color-primary)"
                   : "transparent",
               }}
               aria-label={item.label}
@@ -151,7 +137,11 @@ export default function Navbar() {
         aria-label="Toggle Theme"
         type="button"
       >
-        {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        {theme === "dark" ? (
+          <Sun className="w-5 h-5" />
+        ) : (
+          <Moon className="w-5 h-5" />
+        )}
         <AnimatePresence>
           {showThemeTooltip && (
             <motion.div
@@ -167,7 +157,7 @@ export default function Navbar() {
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
               }}
             >
-              {isDark ? "Light Mode" : "Dark Mode"}
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
               <div
                 className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent"
                 style={{
