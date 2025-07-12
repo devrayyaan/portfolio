@@ -32,13 +32,14 @@ export default function Home() {
           👋
         </motion.h1>
         <h1 className="text-xl md:text-3xl font-semibold">
-          Hi. I&apos;m Benjamin, a Webflow and Framer Specialist!
+          Hi. I&apos;m Rayyaan, a Full Stack Web and App Developer!
         </h1>
         <p className="text-md md:text-xl text-gray-500 leading-relaxed lg:leading-[2em]">
-          Hello, I&apos;m Benjamin, an adept professional in Webflow and Framer.
-          Experienced in crafting responsive websites using visual editing
-          software like Webflow. Accomplished in creating lively websites with
-          Framer.
+          Hello, I&apos;m Rayyaan, a skilled full stack developer specializing
+          in modern web and mobile applications. Expert in React, Next.js,
+          Node.js, and database technologies. Passionate about creating
+          scalable, user-friendly solutions that drive business growth and
+          deliver exceptional user experiences.
         </p>
         <div className="flex flex-col lg:flex-row items-start gap-2 lg:items-center lg:gap-[20px] mt-2">
           <Link href="/contact">
