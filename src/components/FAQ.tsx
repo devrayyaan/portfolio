@@ -1,6 +1,7 @@
 "use client";
-import { CircleQuestionMark, Plus, X } from "lucide-react";
+import { CircleQuestionMark, Plus } from "lucide-react";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -67,10 +68,17 @@ const FAQ = () => {
 
   return (
     <div className="w-full flex flex-col items-center py-12">
-      <CircleQuestionMark className="w-8 h-8 text-orange-500 mb-2" />
-      <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
+      <CircleQuestionMark
+        className="w-8 h-8 mb-2 transition-colors duration-200"
+        style={{ color: "var(--color-primary)" }}
+      />
+      <h2
+        className="text-2xl md:text-4xl font-bold text-center mb-12 transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         Frequently Asked Questions
       </h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
         {/* Left column */}
         <div className="flex flex-col gap-4">
@@ -110,26 +118,59 @@ function FAQItem({
 }) {
   return (
     <button
-      className="flex flex-col bg-white rounded-xl border border-gray-200 px-4 py-3 text-lg font-medium text-gray-700 cursor-pointer w-full"
+      className="flex flex-col bg-transparent rounded-xl border px-4 py-3 text-lg font-medium cursor-pointer w-full transition-colors duration-200"
+      style={{
+        borderColor: "var(--color-border-strong)",
+        color: "var(--color-text-body)",
+      }}
       onClick={() => handleOpen(faq.id)}
       aria-expanded={open === faq.id}
       aria-controls={`faq-panel-${faq.id}`}
     >
       <div className="flex items-center justify-between">
-        <span className="text-[15px] font-medium text-black text-left">
+        <span
+          className="text-[15px] font-medium text-left transition-colors duration-200"
+          style={{ color: "var(--color-text-heading)" }}
+        >
           {faq.question}
         </span>
-        {open.includes(faq.id) ? (
-          <X className="w-4 h-4 text-gray-700" />
-        ) : (
-          <Plus className="w-4 h-4 text-gray-700" />
-        )}
+        <motion.div
+          animate={{ rotate: open.includes(faq.id) ? 45 : 0 }}
+          transition={{ duration: 0.1, ease: "easeInOut" }}
+        >
+          <Plus
+            className={`w-4 h-4 transition-colors duration-200 ${
+              open.includes(faq.id) ? "" : ""
+            }`}
+            style={{
+              color: open.includes(faq.id)
+                ? "var(--color-text-heading)"
+                : "var(--color-text-muted)",
+            }}
+          />
+        </motion.div>
       </div>
-      {open.includes(faq.id) && (
-        <div className="text-gray-500 text-left mt-4 text-sm font-light">
-          {faq.answer}
-        </div>
-      )}
+      <AnimatePresence>
+        {open.includes(faq.id) && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+            }}
+            className="overflow-hidden"
+          >
+            <div
+              className="text-left mt-4 text-sm font-light transition-colors duration-200"
+              style={{ color: "var(--color-text-muted)" }}
+            >
+              {faq.answer}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </button>
   );
 }

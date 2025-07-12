@@ -35,15 +35,24 @@ const testimonials = [
 const HappyCustomers = () => {
   return (
     <div className="w-full flex flex-col items-center py-8">
-      <Quote className="w-8 h-8 text-orange-500 mb-2" />
-      <h2 className="bg-gradient-to-r from-gray-800 to-gray-400 bg-clip-text text-4xl font-bold text-transparent mb-12 mt-4 text-center">
+      <Quote
+        className="w-8 h-8 mb-2 transition-colors duration-200"
+        style={{ color: "var(--color-primary)" }}
+      />
+      <h2
+        className="text-2xl lg:text-4xl font-bold mb-12 mt-4 text-center transition-colors duration-200"
+        style={{ color: "var(--color-text-heading)" }}
+      >
         Happy Customers!
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
         {testimonials.map((t, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col"
+            className="bg-transparent rounded-xl border p-6 flex flex-col transition-colors duration-200"
+            style={{
+              borderColor: "var(--color-border-strong)",
+            }}
           >
             <div className="flex items-center mb-3">
               <img
@@ -52,13 +61,26 @@ const HappyCustomers = () => {
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div>
-                <div className="font-bold text-base text-gray-900">{t.name}</div>
-                <div className="text-sm text-gray-400">
+                <div
+                  className="font-bold text-base transition-colors duration-200"
+                  style={{ color: "var(--color-text-heading)" }}
+                >
+                  {t.name}
+                </div>
+                <div
+                  className="text-sm transition-colors duration-200"
+                  style={{ color: "var(--color-text-muted)" }}
+                >
                   {t.username} • {t.company}
                 </div>
               </div>
             </div>
-            <div className="text-gray-800 text-base mt-2">{t.text}</div>
+            <div
+              className="text-base mt-2 transition-colors duration-200"
+              style={{ color: "var(--color-text-body)" }}
+            >
+              {t.text}
+            </div>
           </div>
         ))}
       </div>

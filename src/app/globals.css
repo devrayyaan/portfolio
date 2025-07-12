@@ -1,25 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.light {
+  /* Backgrounds */
+  --color-background: #f9fafb; /* light gray */
+  --color-background-secondary: #fff; /* white */
+  --color-background-tertiary: #f3f4f6; /* gray-100 */
+  --color-background-accent: #fef3c7; /* subtle accent bg, optional */
+  --color-background-tooltip: #1e1e20;
+  --color-border-tooltip: #272424;
+  --color-text-tooltip: #f9fafb;
+  --color-background-gradient: linear-gradient(to right, #fff9a9, #a3ffdc);
+
+  /* Text */
+  --color-text-heading: #111827; /* gray-900 */
+  --color-text-body: #374151; /* gray-700 */
+  --color-text-muted: #6b7280; /* gray-500 */
+  --color-text-inverse: #fff; /* for dark bg/buttons */
+
+  /* Accent/Primary */
+  --color-primary: #00c97c; /* green */
+  --color-primary-hover: #008d57;
+  --color-accent: #2563eb; /* blue-600 */
+  --color-accent-hover: #1d4ed8;
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--color-primary);
+  --color-btn-primary-hover: var(--color-primary-hover);
+  --color-btn-primary-text: var(--color-text-inverse);
+  --color-btn-secondary-bg: var(--color-accent);
+  --color-btn-secondary-hover: var(--color-accent-hover);
+  --color-btn-secondary-text: var(--color-text-inverse);
+
+  /* Borders & Dividers */
+  --color-border: #e5e7eb; /* gray-200 */
+  --color-border-strong: #d1d5db; /* gray-300 */
+  --color-divider: #e0e0e0;
+
+  /* Status */
+  --color-success: #22c55e; /* green-500 */
+  --color-warning: #f59e42; /* orange-400 */
+  --color-error: #ef4444; /* red-500 */
+
+  /* Gradients */
+  --color-gradient-from: #1f2937; /* gray-800 */
+  --color-gradient-to: #9ca3af; /* gray-400 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-general-sans);
-}
+.dark {
+  --color-background: #18181b;
+  --color-background-secondary: #23232a;
+  --color-background-tertiary: #2d2d33;
+  --color-background-accent: #2d2d34;
+  --color-background-tooltip: #3c4046;
+  --color-border-tooltip: #3e4147;
+  --color-text-tooltip: #f9fafb;
+  --color-background-gradient: linear-gradient(to right, #522c00, #153b2b);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-}
+  --color-text-heading: #fff;
+  --color-text-body: #e5e7eb;
+  --color-text-muted: #a1a1aa;
+  --color-text-inverse: #18181b;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-general-sans);
+  --color-primary: #00c97c;
+  --color-primary-hover: #009e61;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #3b82f6;
+
+  --color-btn-primary-bg: var(--color-primary);
+  --color-btn-primary-hover: var(--color-primary-hover);
+  --color-btn-primary-text: var(--color-text-inverse);
+  --color-btn-secondary-bg: var(--color-accent);
+  --color-btn-secondary-hover: var(--color-accent-hover);
+  --color-btn-secondary-text: var(--color-text-inverse);
+
+  --color-border: #4b5563;
+  --color-border-strong: #374151;
+  --color-divider: #374151;
+
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  --color-gradient-from: #18181b;
+  --color-gradient-to: #a1a1aa;
 }
