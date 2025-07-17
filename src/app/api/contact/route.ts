@@ -14,12 +14,12 @@ const contactSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     const validatedData = contactSchema.parse(body);
-    
+
     const { data, error } = await resend.emails.send({
-      from: `Contact Form <${process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'}>`,
-      to: process.env.RESEND_TO_EMAIL || 'your-email@example.com',
+      from: `Contact Form <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+      to: process.env.RESEND_TO_EMAIL || "your-email@example.com",
       subject: `New ${validatedData.type} Inquiry from ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Invalid form data", details: error.errors },
+        { error: "Invalid form data", details: error.message },
         { status: 400 }
       );
     }

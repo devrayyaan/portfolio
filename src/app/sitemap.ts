@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (route) => ({
       url: `${siteConfig.url}${route}`,
       lastModified: new Date(),
-      changeFrequency: route === "" ? "weekly" : "monthly" as const,
+      changeFrequency: route === "" ? "weekly" : ("monthly" as any),
       priority: route === "" ? 1 : route === "/projects" ? 0.9 : 0.8,
     })
   );
