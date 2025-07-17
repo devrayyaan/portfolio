@@ -2,16 +2,67 @@
 import { Clock } from "lucide-react";
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  type: z.enum(["General", "Project"]),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
-  const [type, setType] = useState("General");
+  const [type, setType] = useState<"General" | "Project">("General");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    setValue,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      type: "General",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      alert("Message sent successfully!");
+      reset();
+      setType("General");
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <motion.div
       ref={ref}
-      className="bg-transparent rounded-2xl p-4 md:p-6 md:p-10 w-full mx-auto border transition-colors duration-200"
+      className="bg-transparent rounded-2xl p-4 md:p-10 w-full mx-auto border transition-colors duration-200"
       style={{
         borderColor: "var(--color-border)",
       }}
@@ -50,7 +101,10 @@ const ContactForm = () => {
                     ? "var(--color-text-heading)"
                     : "var(--color-text-muted)",
               }}
-              onClick={() => setType("General")}
+              onClick={() => {
+                setType("General");
+                setValue("type", "General");
+              }}
               type="button"
             >
               General
@@ -71,7 +125,10 @@ const ContactForm = () => {
                     ? "var(--color-text-heading)"
                     : "var(--color-text-muted)",
               }}
-              onClick={() => setType("Project")}
+              onClick={() => {
+                setType("Project");
+                setValue("type", "Project");
+              }}
               type="button"
             >
               Project
@@ -86,43 +143,75 @@ const ContactForm = () => {
           <span>Average Response Time: 24 Hours or Less</span>
         </div>
       </div>
-      <form className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="flex flex-col md:flex-row gap-4">
-          <input
-            type="text"
-            placeholder="Name"
-            className="flex-1 rounded-lg px-4 py-3 outline-none text-sm md:text-base transition-colors duration-200"
-            style={{
-              backgroundColor: "var(--color-background-tertiary)",
-              color: "var(--color-text-body)",
-              border: "1px solid var(--color-border)",
-            }}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="flex-1 rounded-lg px-4 py-3 outline-none text-sm md:text-base transition-colors duration-200"
-            style={{
-              backgroundColor: "var(--color-background-tertiary)",
-              color: "var(--color-text-body)",
-              border: "1px solid var(--color-border)",
-            }}
-          />
+          <div className="flex-1">
+            <input
+              type="text"
+              placeholder="Name"
+              {...register("name")}
+              className="w-full rounded-lg px-4 py-3 outline-none text-sm md:text-base transition-colors duration-200"
+              style={{
+                backgroundColor: "var(--color-background-tertiary)",
+                color: "var(--color-text-body)",
+                border: errors.name
+                  ? "1px solid var(--color-danger)"
+                  : "1px solid var(--color-border)",
+              }}
+            />
+            {errors.name && (
+              <p className="text-sm mt-1" style={{ color: "var(--color-danger)" }}>
+                {errors.name.message}
+              </p>
+            )}
+          </div>
+          <div className="flex-1">
+            <input
+              type="email"
+              placeholder="Email"
+              {...register("email")}
+              className="w-full rounded-lg px-4 py-3 outline-none text-sm md:text-base transition-colors duration-200"
+              style={{
+                backgroundColor: "var(--color-background-tertiary)",
+                color: "var(--color-text-body)",
+                border: errors.email
+                  ? "1px solid var(--color-danger)"
+                  : "1px solid var(--color-border)",
+              }}
+            />
+            {errors.email && (
+              <p className="text-sm mt-1" style={{ color: "var(--color-danger)" }}>
+                {errors.email.message}
+              </p>
+            )}
+          </div>
         </div>
-        <textarea
-          placeholder="Message"
-          rows={6}
-          className="w-full rounded-lg px-4 py-3 outline-none resize-none text-sm md:text-base transition-colors duration-200"
-          style={{
-            backgroundColor: "var(--color-background-tertiary)",
-            color: "var(--color-text-body)",
-            border: "1px solid var(--color-border)",
-          }}
-        />
+        <div>
+          <textarea
+            placeholder="Message"
+            rows={6}
+            {...register("message")}
+            className="w-full rounded-lg px-4 py-3 outline-none resize-none text-sm md:text-base transition-colors duration-200"
+            style={{
+              backgroundColor: "var(--color-background-tertiary)",
+              color: "var(--color-text-body)",
+              border: errors.message
+                ? "1px solid var(--color-danger)"
+                : "1px solid var(--color-border)",
+            }}
+          />
+          {errors.message && (
+            <p className="text-sm mt-1" style={{ color: "var(--color-danger)" }}>
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+        <input type="hidden" {...register("type")} value={type} />
         <div>
           <button
             type="submit"
-            className="w-full font-semibold py-4 rounded-xl text-lg transition-colors duration-200 shadow"
+            disabled={isSubmitting}
+            className="w-full font-semibold py-4 rounded-xl text-lg transition-colors duration-200 shadow disabled:opacity-50 disabled:cursor-not-allowed"
             style={{
               backgroundColor:
                 type === "General"
@@ -131,7 +220,8 @@ const ContactForm = () => {
               color: "var(--color-text-inverse)",
             }}
           >
-            Send Message <span className="ml-2">&rarr;</span>
+            {isSubmitting ? "Sending..." : "Send Message"}
+            {!isSubmitting && <span className="ml-2">&rarr;</span>}
           </button>
         </div>
       </form>

@@ -11,116 +11,100 @@ import Image from "next/image";
 
 const techStack = [
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Arc"
-        className="w-8 h-8"
-      />
-    ),
+    icon: <img src="/tech-stack/arc.svg" alt="" className="w-8 h-8" />,
     name: "Arc",
     description: "Best Productivity Browser.",
     link: "https://arc.net",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Framer"
-        className="w-8 h-8"
-      />
-    ),
-    name: "Framer",
-    description: "Build Next Level Websites.",
-    link: "https://framer.com",
+    icon: <img src="/tech-stack/typescript.svg" alt="" className="w-8 h-8" />,
+    name: "TypeScript",
+    description: "Best Language for Web Development.",
+    link: "https://typescriptlang.org",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Superhuman"
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "Superhuman",
-    description: "Simple & Powerful Email.",
-    link: "https://superhuman.com",
+    icon: <img src="/tech-stack/nextjs.svg" alt="" className="w-8 h-8" />,
+    name: "Next.js",
+    description: "Best Framework for Web Development.",
+    link: "https://nextjs.org",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="LemonSqueezy"
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "LemonSqueezy",
-    description: "Easy Checkout Solution",
-    link: "https://lemonsqueezy.com",
+    icon: <img src="/tech-stack/react-native.svg" alt="" className="w-8 h-8" />,
+    name: "React Native",
+    description: "Best Framework for Mobile Development.",
+    link: "https://reactnative.dev",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Things 3"
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "Things 3",
-    description: "Manage Daily Tasks.",
-    link: "https://things.com",
+    icon: <img src="/tech-stack/cursor.svg" alt="" className="w-8 h-8" />,
+    name: "Cursor",
+    description: "Best AI Code Editor.",
+    link: "https://cursor.com",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Figma"
-        className="w-8 h-8 rounded"
-      />
-    ),
+    icon: <img src="/tech-stack/claude-ai.svg" alt="" className="w-8 h-8" />,
+    name: "Claude Code",
+    description: "Best AI Code Assistant.",
+    link: "https://claude.ai",
+  },
+  {
+    icon: <img src="/tech-stack/figma.svg" alt="" className="w-8 h-8" />,
     name: "Figma",
     description: "Best Design Tool.",
     link: "https://figma.com",
+  },
+  {
+    icon: <img src="/tech-stack/bunjs.svg" alt="" className="w-8 h-8" />,
+    name: "Bun.js",
+    description: "Best JS Runtime.",
+    link: "https://bun.sh",
+  },
+  {
+    icon: <img src="/tech-stack/slack.svg" alt="" className="w-8 h-8" />,
+    name: "Slack",
+    description: "Okish Communication Tool.",
+    link: "https://slack.com",
+  },
+  {
+    icon: (
+      <img src="/tech-stack/screen-studio.png" alt="" className="w-8 h-8" />
+    ),
+    name: "Screen Studio",
+    description: "Best Screen Recorder.",
+    link: "https://screen.studio",
   },
 ];
 
 const techGear = [
   {
-    name: "MacBook Pro",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
+    name: "MacBook Air",
+    image: "/macbook-air.jpeg",
     description:
-      "The M2 Max Chip is just mind blowing with that 120Hz display.",
+      "The M3 chip is just mind blowing. Only thing I don't like is the 60hz display.",
   },
   {
-    name: "LG 32UN650",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
+    name: "MSI G274QPF",
+    image: "/msi-monitor.png",
     description: "A good monitor, but thinking to change it soon.",
   },
   {
-    name: "Magic Keyboard",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "Minimal, wireless, and reliable.",
+    name: "Aula F75",
+    image: "/aula-f75.webp",
+    description: "The best keyboard for productivity and comfort.",
   },
   {
-    name: "MX Master 3S",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "The best mouse for productivity and comfort.",
+    name: "AMD Rx 6900XT",
+    image: "/rx-6900xt.png",
+    description: "A good GPU for gaming and productivity.",
   },
   {
-    name: "Magic Keyboard",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "Minimal, wireless, and reliable.",
+    name: "Iphone 16 Pro",
+    image: "/16-pro.webp",
+    description: "The best phone for productivity and comfort.",
   },
   {
-    name: "MX Master 3S",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "The best mouse for productivity and comfort.",
+    name: "PS5",
+    image: "/ps5.webp",
+    description: "The best console for gaming.",
   },
 ];
 
@@ -236,7 +220,9 @@ function TechGearItem({ item }: { item: any }) {
         <img
           src={item.image}
           alt={item.name}
-          className="w-28 h-28 object-contain mb-4 rounded-lg"
+          className={`w-36 h-36 object-contain mb-4 rounded-lg ${
+            item.name === "PS5" ? "scale-[2]" : ""
+          }`}
         />
       </div>
       <p

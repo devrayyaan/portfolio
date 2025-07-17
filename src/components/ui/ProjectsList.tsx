@@ -2,13 +2,11 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { getAllProjects } from "@/utils/data";
+import { getAllProjects, getLimitedProjects, Project } from "@/utils/data";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ProjectsList() {
-  const projects = getAllProjects();
-
+export default function ProjectsList({ projects }: { projects: Project[] }) {
   return (
     <div className="w-full flex flex-col items-center py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">

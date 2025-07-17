@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, Briefcase } from "lucide-react";
 import ProjectsList from "./ui/ProjectsList";
 import Link from "next/link";
+import { getLimitedProjects } from "@/utils/data";
 
 const LatestWork = () => {
   return (
@@ -22,7 +23,7 @@ const LatestWork = () => {
         </div>
       </div>
 
-      <ProjectsList />
+      <ProjectsList projects={getLimitedProjects()} />
     </>
   );
 };

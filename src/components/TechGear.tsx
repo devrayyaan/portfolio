@@ -3,41 +3,35 @@ import React from "react";
 
 const techGear = [
   {
-    name: "MacBook Pro",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
+    name: "MacBook Air",
+    image: "/macbook-air.jpeg",
     description:
-      "The M2 Max Chip is just mind blowing with that 120Hz display.",
+      "The M3 chip is just mind blowing. Only thing I don't like is the 60hz display.",
   },
   {
-    name: "LG 32UN650",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
+    name: "MSI G274QPF",
+    image: "/msi-monitor.png",
     description: "A good monitor, but thinking to change it soon.",
   },
   {
-    name: "Magic Keyboard",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "Minimal, wireless, and reliable.",
+    name: "Aula F75",
+    image: "/aula-f75.webp",
+    description: "The best keyboard for productivity and comfort.",
   },
   {
-    name: "MX Master 3S",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "The best mouse for productivity and comfort.",
+    name: "AMD Rx 6900XT",
+    image: "/rx-6900xt.png",
+    description: "A good GPU for gaming and productivity.",
   },
   {
-    name: "Magic Keyboard",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "Minimal, wireless, and reliable.",
+    name: "Iphone 16 Pro",
+    image: "/16-pro.webp",
+    description: "The best phone for productivity and comfort.",
   },
   {
-    name: "MX Master 3S",
-    image:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spacegray-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311040407",
-    description: "The best mouse for productivity and comfort.",
+    name: "PS5",
+    image: "/ps5.webp",
+    description: "The best console for gaming.",
   },
 ];
 
@@ -72,7 +66,9 @@ export default function TechGear() {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-28 h-28 object-contain mb-4 rounded-lg"
+                className={`w-36 h-36 object-contain mb-4 rounded-lg ${
+                  item.name === "PS5" ? "scale-[2]" : ""
+                }`}
               />
             </div>
             <p
