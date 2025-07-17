@@ -60,7 +60,7 @@ export const defaultMetadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: `${siteConfig.name} - Full Stack Developer & Software Engineer`,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -69,12 +69,13 @@ export const defaultMetadata: Metadata = {
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} - Full Stack Developer`,
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: `${siteConfig.name} - Full Stack Developer & Software Engineer`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
     creator: siteConfig.author.twitter,
@@ -93,6 +94,23 @@ export const defaultMetadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+      },
+    ],
   },
 };
 
