@@ -6,51 +6,51 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     id: 1,
-    question: "What are Framer Templates?",
+    question: "What types of projects do you work on?",
     answer:
-      "Framer Templates are pre-designed website layouts and components that you can use as a starting point for your web design projects. They are created using the Framer Website building tool.",
+      "I build custom web applications with Next.js & TypeScript and cross-platform mobile apps with React Native. Whether you’re a startup validating an MVP or an established business looking to scale, I can help turn your idea into a high-performing digital product.",
   },
   {
     id: 2,
-    question: "Can I modify Framer Templates to fit my needs?",
+    question: "Which technologies do you use?",
     answer:
-      "Yes, Framer Templates are fully customizable. You can edit layouts, colors, text, and components to match your brand and requirements.",
+      "My go-to stack is React Native for iOS & Android, and Next.js with TypeScript for the web. I also work with Tailwind CSS, GraphQL/REST APIs, PostgreSQL, Prisma, AWS, and Vercel to deliver fast, maintainable solutions.",
   },
   {
     id: 3,
-    question: "How are Framer Templates beneficial?",
+    question: "How much will my project cost?",
     answer:
-      "They save you time and effort by providing a professional starting point, ensuring responsive design and modern best practices.",
+      "Pricing depends on the features, complexity, and timeline. After a free discovery call, I’ll send you a fixed-price quote so you know exactly what to expect—no hidden fees.",
   },
   {
     id: 4,
-    question: "What is the turnaround time?",
+    question: "What is the typical timeline?",
     answer:
-      "Turnaround time depends on the complexity of your project, but most template-based sites can be launched quickly—often within days.",
+      "Most marketing sites launch in 2-4 weeks, while full-featured web or mobile apps take 4-12 weeks. During our initial call we’ll agree on a schedule that aligns with your business goals.",
   },
   {
     id: 5,
-    question: "Do you offer custom web design services?",
+    question: "What does your process look like?",
     answer:
-      "Yes, we offer custom web design services tailored to your unique needs, in addition to template-based solutions.",
+      "1) Discovery & scope 2) UX/UI design 3) Agile development with weekly demos 4) Testing & polish 5) Launch & post-launch support. You’ll have full visibility and can give feedback at every stage.",
   },
   {
     id: 6,
-    question: "Can I request customizations?",
+    question: "Do you provide maintenance after launch?",
     answer:
-      "Absolutely! We can customize any template or create new components to fit your requirements.",
+      "Yes. I offer flexible maintenance and feature-iteration packages to keep your product secure, up-to-date, and continuously improving.",
   },
   {
     id: 7,
-    question: "What is Framer?",
+    question: "Will my idea stay confidential?",
     answer:
-      "Framer is a powerful website design and prototyping tool that allows you to create interactive, high-fidelity sites visually.",
+      "Absolutely. I’m happy to sign an NDA before we discuss your project and all code ownership will belong to you upon completion.",
   },
   {
     id: 8,
-    question: "What payment methods do you accept?",
+    question: "How do we get started?",
     answer:
-      "We accept major credit cards, PayPal, and other secure payment methods.",
+      "Fill out the contact form or book a free consultation call. We’ll discuss your goals, outline the scope, and map out the next steps together.",
   },
 ];
 

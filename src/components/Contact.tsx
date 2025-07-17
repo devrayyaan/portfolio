@@ -95,8 +95,8 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-center w-full">
+        {/* <div className="flex items-center gap-2">
           <input
             type="email"
             placeholder="Subscribe to Newsletter"
@@ -116,7 +116,7 @@ const Contact = () => {
           >
             Subscribe
           </button>
-        </div>
+        </div> */}
 
         <Divider className="md:hidden my-4" />
 

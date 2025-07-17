@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -14,7 +15,16 @@ const Header = () => {
         <div
           className="w-[50px] h-[50px] rounded-full transition-colors duration-200"
           style={{ backgroundColor: "var(--color-background-tertiary)" }}
-        ></div>
+        >
+          <Image
+            src="/profile.png"
+            alt="Profile"
+            width={50}
+            priority
+            height={50}
+            className="rounded-full w-full h-full object-cover"
+          />
+        </div>
         <div className="font-medium">
           <p
             className="lg:text-lg transition-colors duration-200"

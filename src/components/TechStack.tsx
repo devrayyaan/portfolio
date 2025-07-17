@@ -5,76 +5,40 @@ import React from "react";
 
 const techStack = [
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt=""
-        className="w-8 h-8"
-      />
-    ),
+    icon: <img src="/tech-stack/arc.svg" alt="" className="w-8 h-8" />,
     name: "Arc",
     description: "Best Productivity Browser.",
     link: "https://arc.net",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt=""
-        className="w-8 h-8"
-      />
-    ),
-    name: "Framer",
-    description: "Build Next Level Websites.",
-    link: "https://framer.com",
+    icon: <img src="/tech-stack/typescript.svg" alt="" className="w-8 h-8" />,
+    name: "TypeScript",
+    description: "Best Language for Web Development.",
+    link: "https://typescriptlang.org",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt=""
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "Superhuman",
-    description: "Simple & Powerful Email.",
-    link: "https://superhuman.com",
+    icon: <img src="/tech-stack/nextjs.svg" alt="" className="w-8 h-8" />,
+    name: "Next.js",
+    description: "Best Framework for Web Development.",
+    link: "https://nextjs.org",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt=""
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "LemonSqueezy",
-    description: "Easy Checkout Solution",
-    link: "https://lemonsqueezy.com",
+    icon: <img src="/tech-stack/react-native.svg" alt="" className="w-8 h-8" />,
+    name: "React Native",
+    description: "Best Framework for Mobile Development.",
+    link: "https://reactnative.dev",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt=""
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "Things 3",
-    description: "Manage Daily Tasks.",
-    link: "https://things.com",
+    icon: <img src="/tech-stack/cursor.svg" alt="" className="w-8 h-8" />,
+    name: "Cursor",
+    description: "Best AI Code Editor.",
+    link: "https://cursor.com",
   },
   {
-    icon: (
-      <img
-        src="https://cdn.iconscout.com/icon/free/png-256/figma-3521426-2944870.png"
-        alt="Figma"
-        className="w-8 h-8 rounded"
-      />
-    ),
-    name: "Figma",
-    description: "Best Design Tool.",
-    link: "https://figma.com",
+    icon: <img src="/tech-stack/claude-ai.svg" alt="" className="w-8 h-8" />,
+    name: "Claude Code",
+    description: "Best AI Code Assistant.",
+    link: "https://claude.ai",
   },
 ];
 

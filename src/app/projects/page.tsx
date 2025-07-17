@@ -4,6 +4,7 @@ import Contact from "@/components/Contact";
 import Title from "@/components/ui/Title";
 import Subtitle from "@/components/ui/Subtitle";
 import ProjectsList from "@/components/ui/ProjectsList";
+import { getAllProjects } from "@/utils/data";
 
 export default function ProjectsPage() {
   return (
@@ -15,7 +16,7 @@ export default function ProjectsPage() {
       <Title text="Projects I've Worked On!" />
       <Subtitle text="In my past experience, I have had the opportunity to work on diverse projects and collaborate with renowned brands." />
 
-      <ProjectsList />
+      <ProjectsList projects={getAllProjects()} />
       <Contact />
     </div>
   );

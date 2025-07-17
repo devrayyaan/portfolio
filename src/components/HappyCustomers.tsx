@@ -3,32 +3,32 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    name: "John Smith",
-    username: "@John_123",
-    company: "ElevateTech Solutions",
-    text: `SleekFolio is perfect for my portfolio. Its modern design beautifully showcases my work. User-friendly customization and responsiveness ensure seamless experiences on any device. It saves time and streamlines my workflow.`,
+    avatar: "/testimonials/ezenuni.webp",
+    name: "Ezenuni",
+    username: "@ezenuni",
+    company: "ITXDB Solutions",
+    text: `Rayyaan Nauman EXCEEDED expectations in software development with his professionalism and code expertise. His language fluency and timely delivery made the collaboration smooth and highly efficient. 🙌 Highly recommend working with him!`,
   },
   {
     avatar: "https://randomuser.me/api/portraits/men/44.jpg",
-    name: "John Smith",
-    username: "@John_123",
-    company: "ElevateTech Solutions",
-    text: `SleekFolio exceeded my expectations. Its sleek design makes projects stand out. Intuitive customization and responsiveness create stunning portfolios across devices. It's an efficient, time-saving solution.`,
+    name: "Jereon",
+    username: "@jeroenvdheide",
+    company: "Xanders",
+    text: `Delivered exactly what was requested, flexible & responsive during iterations. Thanks.`,
   },
   {
-    avatar: "https://randomuser.me/api/portraits/men/65.jpg",
-    name: "John Smith",
-    username: "@John_123",
-    company: "ElevateTech Solutions",
-    text: `SleekFolio is a game-changer for Framer projects. The design is modern and the workflow is seamless. Highly recommended!`,
+    avatar: "/testimonials/jake.jpeg",
+    name: "Jacob Jolis",
+    username: "@serenzen",
+    company: "Answering Machine",
+    text: `Rayyaan is an exceptionally strong developer. this was our second project with him and we will gladly return for more. this time we had multiple complex frontend flows that required creativity and domain expertise to work through. rayyaan took it all in stride and built several elegant solutions so we didn’t have to compromise on user experience`,
   },
   {
     avatar: "https://randomuser.me/api/portraits/men/12.jpg",
-    name: "John Smith",
-    username: "@John_123",
-    company: "ElevateTech Solutions",
-    text: `SleekFolio is the top Framer template. Its sleek, intuitive design and responsiveness make it a must-have for any portfolio.`,
+    name: "Ricky",
+    username: "@chankalok",
+    company: "Xoxo Beverages",
+    text: `Rayyaan deserves all the success in the world. He is a great developer and a great person. I highly recommend him to anyone looking for a developer.`,
   },
 ];
 
@@ -45,7 +45,7 @@ const HappyCustomers = () => {
       >
         Happy Customers!
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-5xl">
         {testimonials.map((t, idx) => (
           <div
             key={idx}

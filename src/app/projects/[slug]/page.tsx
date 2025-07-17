@@ -3,7 +3,7 @@ import Divider from "@/components/Divider";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllProjects, getProject } from "@/utils/data";
+import { getMoreProjects, getProject } from "@/utils/data";
 
 export default async function ProjectPage({ params }: { params: any }) {
   const project = getProject(params.slug);
@@ -194,41 +194,39 @@ export default async function ProjectPage({ params }: { params: any }) {
         More Projects
       </h2>
       <div className="w-full flex flex-col md:flex-row flex-wrap gap-4 mb-6 items-center justify-center lg:justify-start">
-        {getAllProjects()
-          .filter((p) => p.slug !== params.slug)
-          .map((project, idx) => {
-            return (
-              <Link
-                href={`/projects/${project.slug}`}
-                key={idx}
-                className="flex-1 w-full md:w-64 bg-transparent rounded-2xl p-3 flex flex-col h-[350px] border transition-colors duration-200"
-                style={{
-                  borderColor: "var(--color-border)",
-                }}
-              >
-                <div key={idx}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover rounded-xl mb-6"
-                  />
-                  <h3
-                    className="text-left text-[15px] lg:text-xl font-bold transition-colors duration-200"
-                    style={{ color: "var(--color-text-heading)" }}
-                  >
-                    {project.title}
-                  </h3>
+        {getMoreProjects(params.slug).map((project, idx) => {
+          return (
+            <Link
+              href={`/projects/${project.slug}`}
+              key={idx}
+              className="flex-1 w-full md:w-64 bg-transparent rounded-2xl p-3 flex flex-col h-[350px] border transition-colors duration-200"
+              style={{
+                borderColor: "var(--color-border)",
+              }}
+            >
+              <div key={idx}>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover rounded-xl mb-6"
+                />
+                <h3
+                  className="text-left text-[15px] lg:text-xl font-bold transition-colors duration-200"
+                  style={{ color: "var(--color-text-heading)" }}
+                >
+                  {project.title}
+                </h3>
 
-                  <p
-                    className="text-sm lg:text-base flex-1 text-left transition-colors duration-200"
-                    style={{ color: "var(--color-text-muted)" }}
-                  >
-                    {project.description.substring(0, 50)}...
-                  </p>
-                </div>
-              </Link>
-            );
-          })}
+                <p
+                  className="text-sm lg:text-base flex-1 text-left transition-colors duration-200"
+                  style={{ color: "var(--color-text-muted)" }}
+                >
+                  {project.description.substring(0, 50)}...
+                </p>
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
       <Contact />
